@@ -1,1 +1,0 @@
-# mahipatelr.github.io
