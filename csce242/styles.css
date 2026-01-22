@@ -1,0 +1,39 @@
+/*Structure */
+ body {
+    background-color: #FFFAFA;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #483D8B;
+}
+
+#content {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #E6E6FA;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: #4B0082;
+}
+h2 {
+    color: #2F4F4F;
+}
+
+
+/* Navigation */
+a {
+    text-decoration: none;
+    background: #000080;
+    color: white;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+/* Assignment List Modification */
+    #Assignments li {
+        margin-bottom: 50px;
+    }
+
+
+
