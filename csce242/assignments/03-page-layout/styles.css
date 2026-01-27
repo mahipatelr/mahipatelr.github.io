@@ -1,0 +1,188 @@
+/*03-page-layout/styles.css */
+*{
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3efe6;
+  color: #204245;
+}
+
+/* Main wrapper */
+#main-content {
+  width: 92%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* HEADER*/
+#main-header {
+  background: #efe9d6;
+  padding: 16px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+#main-header h1 {
+  margin: 0;
+  color: #255b5b;
+}
+
+/* NAVIGATION*/
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+#main-nav li {
+  background: #d98a8a;
+  border-radius: 4px;
+}
+
+#main-nav a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*MAIN CONTENT*/
+main {
+  padding: 20px 0;
+}
+
+/* TOP ROW */
+.top-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Left text */
+.intro.one {
+  flex: 2;
+}
+
+.intro.one h2 {
+  color: #2f6f6f;
+  margin-top: 0;
+}
+
+/* Right cards */
+.cards.two {
+  flex: 3;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.card {
+  flex: 0 0 140px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  background: #2f6f6f;
+  color: white;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.card img {
+  width: 100%;
+  max-width: 140px;
+  border: 3px solid #aac1bf;
+  background: #9fb4b4;
+}
+
+/* FEATURES */
+.features {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feature {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #2f6f6f;
+  color: white;
+  padding: 14px;
+  border-radius: 4px;
+}
+
+.feature.reversed {
+  flex-direction: row-reverse;
+}
+
+.feature .feat-left,
+.feature .feat-right {
+  flex: 0 0 140px;
+  text-align: center;
+}
+
+.feature .feat-mid {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255,255,255,0.06);
+}
+
+.feature img {
+  width: 120px;
+  border: 3px solid rgba(255,255,255,0.15);
+  background: #9fb4b4;
+}
+
+/* FOOTER */
+#main-footer {
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  background: #d98a8a;
+  color: white;
+  border-radius: 6px;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+
+  /* Nav becomes vertical */
+  #main-nav ul {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  /* Stack top row */
+  .top-row {
+    flex-direction: column;
+  }
+
+  /* Stack cards */
+  .cards.two {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 260px;
+  }
+
+  /* Stack feature rows */
+  .feature,
+  .feature.reversed {
+    flex-direction: column;
+    text-align: center;
+  }
+}

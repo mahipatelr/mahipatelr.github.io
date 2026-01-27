@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flex Demo - Assignment 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-content">
+        <header id="main-header">
+            <h1>Layout with Flex</h1>
+
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Staff</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="content">
+            <!-- TOP ROW: intro (left) + 4 cards (right) -->
+            <section class="top-row columns">
+                <aside class="intro one">
+                    <h2>This is very important text</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                        vulputate justo sed arcu feugiat, sed gravida mi convallis. Suspendisse
+                        potenti. Fusce at ipsum sit amet justo gravida volutpat.
+                    </p>
+                </aside>
+
+                <div class="cards two">
+                    <div class="card">
+                        <h3>Title 1</h3>
+                        <img src="https://dummyimage.com/200x300/9fb4b4/ffffff&text=200x300" alt="card1">
+                    </div>
+                    <div class="card">
+                        <h3>Title 2</h3>
+                        <img src="https://dummyimage.com/200x300/9fb4b4/ffffff&text=200x300" alt="card2">
+                    </div>
+                    <div class="card">
+                        <h3>Title 3</h3>
+                        <img src="https://dummyimage.com/200x300/9fb4b4/ffffff&text=200x300" alt="card3">
+                    </div>
+                    <div class="card">
+                        <h3>Title 4</h3>
+                        <img src="https://dummyimage.com/200x300/9fb4b4/ffffff&text=200x300" alt="card4">
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEATURES: three rows, alternating alignment -->
+            <section class="features">
+                <article class="feature">
+                    <div class="feat-left">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat1">
+                    </div>
+                    <div class="feat-mid">
+                        <h3>Idea 1</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </p>
+                    </div>
+                    <div class="feat-right smallbox">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat1b">
+                    </div>
+                </article>
+
+                <article class="feature reversed">
+                    <div class="feat-left">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat2">
+                    </div>
+                    <div class="feat-mid">
+                        <h3>Idea 2</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </p>
+                    </div>
+                    <div class="feat-right">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat2b">
+                    </div>
+                </article>
+
+                <article class="feature">
+                    <div class="feat-left">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat3">
+                    </div>
+                    <div class="feat-mid">
+                        <h3>Idea 3</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </p>
+                    </div>
+                    <div class="feat-right smallbox">
+                        <img src="https://dummyimage.com/200x200/7f9f9f/ffffff&text=200x200" alt="feat3b">
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer id="main-footer">
+            <p>&copy; yourname@example.com</p>
+        </footer>
+    </div>
+</body>
+</html>
