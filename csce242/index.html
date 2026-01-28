@@ -1,37 +1,150 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>CSCE 242: Web Applications</title>
-    <link rel="stylesheet" href="styles.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSCE 242: Web Applications</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="content">
-    <h1>CSCE 242: Web Applications</h1>
-    <h2>Mahi Patel</h2>
-    <p>
-        Utilizing HTML and CSS to design the front-end of a website of student's choice. Then, they will use JavaScript to add functionality to their website.
-        Lastly, they will learn to utilize node and server side JavaScript to store and retrieve data
-        from a server.
-    </p>
 
-    <a id="repoLink" 
-        href="https://github.com/mahipatelr/mahipatelr.github.io/tree/main/csce242"
-        >CSCE 242 Github Repository</a>
-        
-    <h2>Assignments</h2>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="name">Mahi Patel</div>
 
-    <ol>
-        <li>
-            <a href="assignments/01-basic-html/index.html">
-                Basic HTML
+      <h1 class="course-title">CSCE 242: Web Applications</h1>
+
+      <p class="course-desc">
+        Utilizing HTML and CSS to design the front-end of a website of student's choice.
+        Then use JavaScript to add functionality and Node for server-side storage and retrieval.
+      </p>
+
+      <!-- REQUIRED GITHUB TREE LINK -->
+      <a class="repo-btn"
+         href="https://github.com/mahipatelr/mahipatelr.github.io/tree/main/csce242"
+         target="_blank"
+         rel="noopener">
+        CSCE 242 Github Repository
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- ASSIGNMENTS -->
+    <section id="assignments">
+      <h2>Assignments</h2>
+
+      <div class="cards-row">
+
+        <!-- Assignment 1 -->
+        <article class="card">
+          <h3 class="card-title">
+            <a href="./assignments/01-basic-html/index.html" target="_blank" rel="noopener">
+              Assignment 1 – Basic HTML
             </a>
-        </li>
-        <li>
-            <a href="assignments/02-basic-css/index.html">
-                Basic CSS
+          </h3>
+
+          <div class="card-media">
+            <img src="images/assignment1.png" alt="Screenshot of Assignment 1" width="300" height="150">
+          </div>
+
+          <p class="card-desc">
+            Create the basic HTML structure for a multi-page website using semantic
+            elements, headings, lists, and properly nested tags.
+          </p>
+        </article>
+
+        <!-- Assignment 2 -->
+        <article class="card">
+          <h3 class="card-title">
+            <a href="./assignments/02-basic-css/index.html" target="_blank" rel="noopener">
+              Assignment 2 – Basic CSS
             </a>
-        </li>
-    </ol>
-    </div> 
+          </h3>
+
+          <div class="card-media">
+            <img src="images/assignment2.png" alt="Screenshot of Assignment 2" width="300" height="150">
+          </div>
+
+          <p class="card-desc">
+            Apply CSS styling to improve layout and design, including colors,
+            typography, spacing, and an introduction to Flexbox.
+          </p>
+        </article>
+
+        <!-- Assignment 3 -->
+        <article class="card">
+          <h3 class="card-title">
+            <a href="./assignments/03-page-layout/index.html" target="_blank" rel="noopener">
+              Assignment 3 – Page Layout
+            </a>
+          </h3>
+
+          <div class="card-media">
+            <img src="images/assignment3.png" alt="Screenshot of Assignment 3" width="300" height="150">
+          </div>
+
+          <p class="card-desc">
+            Build a responsive page layout using Flexbox that adapts cleanly to
+            different screen sizes and orientations.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="cards-row">
+
+        <article class="card">
+          <h3 class="card-title">
+            <a href="./projects/part1/project-part1-topic-selection.pdf"
+               target="_blank"
+               rel="noopener">
+              Project Topic – Part 1
+            </a>
+          </h3>
+
+          <div class="card-media">
+            <a href="./projects/part1/project-part1-topic-selection.pdf"
+               target="_blank"
+               rel="noopener">
+              <img src="images/topic.png"
+                   alt="Screenshot of project topic PDF"
+                   width="300"
+                   height="150">
+            </a>
+          </div>
+
+          <p class="card-desc">
+            This document outlines the selected project topic, goals, intended audience,
+            and planned features for the final web application.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 CSCE 242 — Mahi Patel</p>
+  </footer>
+
 </body>
 </html>
+
+
+
+
+
+
+
