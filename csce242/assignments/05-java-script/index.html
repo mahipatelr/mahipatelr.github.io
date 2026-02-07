@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 7</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="main-content">
+  <header id="main-header">
+    <h1 class="title-main">Assignment 7</h1>
+    <p class="subtitle">Introduction to JavaScript</p>
+  </header>
+
+  <main id="content">
+    <div class="columns">
+
+      
+      <section class="card">
+        <h3 class="card-title">Geometry</h3>
+        <div class="card-body">
+          <p class="card-instruction">Click the box to show a CSS triangle.</p>
+          <div id="triangle-container"
+               class="triangle-container"
+               tabindex="0"
+               role="button"
+               aria-pressed="false">
+          </div>
+        </div>
+      </section>
+
+     
+      <section class="card">
+        <h3 class="card-title">Select A Date:</h3>
+        <div class="card-body">
+          <input type="date" id="date-picker">
+          <p id="date-output" class="date-output"></p>
+        </div>
+      </section>
+
+      
+      <section class="card">
+        <h3 class="card-title">Frame Image</h3>
+        <div class="card-body">
+
+          <div id="image-wrap"
+               class="image-wrap"
+               tabindex="0"
+               role="button"
+               aria-pressed="false">
+
+            <div class="side top"></div>
+            <div class="side right"></div>
+            <div class="side bottom"></div>
+            <div class="side left"></div>
+
+            <!-- Sunny SVG -->
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <g stroke="#FFD23F" stroke-width="6" stroke-linecap="round">
+                <line x1="60" y1="2" x2="60" y2="14"/>
+                <line x1="60" y1="106" x2="60" y2="118"/>
+                <line x1="2" y1="60" x2="14" y2="60"/>
+                <line x1="106" y1="60" x2="118" y2="60"/>
+                <line x1="18" y1="18" x2="26" y2="26"/>
+                <line x1="94" y1="18" x2="86" y2="26"/>
+                <line x1="18" y1="94" x2="26" y2="86"/>
+                <line x1="94" y1="94" x2="86" y2="86"/>
+              </g>
+
+              <circle cx="60" cy="60" r="40" fill="#FFD23F" stroke="#000" stroke-width="4"/>
+              <circle cx="48" cy="52" r="5"/>
+              <circle cx="72" cy="52" r="5"/>
+              <path d="M45 70 Q60 85 75 70" stroke="#000" stroke-width="4" fill="none"/>
+            </svg>
+
+          </div>
+
+          <p class="card-instruction">
+            Click the image to toggle the colorful frame.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer id="main-footer">
+    <p>@mahipatelr.com</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
