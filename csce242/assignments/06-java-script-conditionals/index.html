@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JavaScript: Conditionals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="page-wrapper">
+    <header id="main-header">
+      <h1>JavaScript: Conditionals</h1>
+      <p class="subtitle">If Statements</p>
+
+      <nav id="main-nav">
+        <div id="toggle-nav" aria-label="Toggle menu" role="button">
+          <div></div><div></div><div></div>
+        </div>
+
+        <ul id="mainNavList" class="hide-small">
+          <li><a href="#" data-target="exercise1-section">Exercise 1</a></li>
+          <li><a href="#" data-target="exercise2-section">Exercise 2</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-card">
+      <div class="content-box">
+        <!-- Exercise 1 -->
+        <section id="exercise1-section" class="exercise">
+          <h2 class="exercise-title">How many minutes until class?</h2>
+          <div class="slider-wrap">
+            <input id="rangeMinutes" type="range" min="0" max="60" value="24">
+          </div>
+          <div id="rangeValue" class="value">24 minutes</div>
+          <div id="rangeMessage" class="message">☕ Grab your coffee. No one will judge if you're 5 minutes late.</div>
+        </section>
+
+        <!-- Exercise 2 -->
+        <section id="exercise2-section" class="exercise" style="display:none;">
+          <h2 class="exercise-title">Countdown till class</h2>
+          <div id="countdownResult" class="message"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="main-footer">@mahipatelr.com</footer>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/intro.js"></script>
+</body>
+</html>
+
+
+
+
+
+

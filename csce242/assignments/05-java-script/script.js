@@ -6,7 +6,7 @@ const init = () => {
   setupImage();
 };
 
-/* Geometry */
+
 const setupTriangle = () => {
   const box = $('#triangle-container');
 
@@ -24,7 +24,7 @@ const setupTriangle = () => {
   });
 };
 
-/* Date */
+
 const setupDate = () => {
   const input = $('#date-picker');
   const output = $('#date-output');
@@ -39,7 +39,7 @@ const setupDate = () => {
   });
 };
 
-/* Image frame */
+
 const setupImage = () => {
   const img = $('#image-wrap');
 
