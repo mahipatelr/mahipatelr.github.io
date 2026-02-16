@@ -6,31 +6,36 @@
   <title>TrustPay — Homepage (CSCE 242)</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header class="site-header">
     <div class="container header-inner">
+
       <div class="brand">
         <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
         <span class="brand-name">TrustPay</span>
       </div>
 
-      <nav class="main-nav" aria-label="Primary">
-        <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobileMenu">
+      <nav class="main-nav">
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="hamburger" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <div id="mobileMenu" class="mobile-menu" role="menu" aria-hidden="true">
-          <a href="#" class="nav-item home" role="menuitem">Home</a>
-          <a href="#" class="nav-item" role="menuitem">Wallet</a>
-          <a href="#" class="nav-item" role="menuitem">Transactions</a>
-          <a href="#" class="nav-item" role="menuitem">Learn</a>
-          <a href="#" class="nav-item" role="menuitem">Support</a>
+        <!-- Mobile Slide Menu -->
+        <div id="mobileMenu" class="mobile-menu">
+          <a href="#" class="nav-item home">Home</a>
+          <a href="#" class="nav-item">Wallet</a>
+          <a href="#" class="nav-item">Transactions</a>
+          <a href="#" class="nav-item">Learn</a>
+          <a href="#" class="nav-item">Support</a>
         </div>
 
-        <div id="mobileOverlay" class="mobile-overlay" hidden></div>
-
+        <!-- Desktop Menu -->
         <div class="desktop-menu">
           <a href="#" class="nav-item home">Home</a>
           <a href="#" class="nav-item">Wallet</a>
@@ -38,16 +43,27 @@
           <a href="#" class="nav-item">Learn</a>
           <a href="#" class="nav-item">Support</a>
         </div>
+
       </nav>
+
     </div>
   </header>
 
   <main>
+
     <section class="hero">
       <div class="container hero-inner">
+
         <div class="hero-text">
-          <h1>Understand your money — <span class="accent">without using real money.</span></h1>
-          <p class="lead">Practice with sample data, visualize transactions, and learn financial concepts in a safe classroom demo.</p>
+          <h1>
+            Understand your money —
+            <span class="accent">without using real money.</span>
+          </h1>
+
+          <p class="lead">
+            Practice with sample data, visualize transactions, and learn financial concepts in a safe classroom demo.
+          </p>
+
           <div class="hero-cta">
             <a class="btn primary" href="#">Try the Demo</a>
             <a class="btn outline" href="#">View Sample Transactions</a>
@@ -55,16 +71,19 @@
         </div>
 
         <div class="hero-media">
-          <img src="../../images/hero.png" alt="Product illustration" />
+          <img src="../../images/hero.png" alt="Product illustration">
         </div>
+
       </div>
     </section>
 
     <section class="features">
       <div class="container">
+
         <h2 class="section-title">What can you learn with TrustPay</h2>
 
         <div class="feature-grid">
+
           <article class="feature">
             <img src="../../images/feature1.png" alt="Clear Balances" class="feature-img">
             <h3>Clear Balances</h3>
@@ -88,89 +107,59 @@
             <h3>Safe Demo Mode</h3>
             <p>Learn without real money or risk — experiment confidently in a sandbox environment.</p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section class="cta-banner">
       <div class="container banner-inner">
+
         <div class="banner-text">
           <h2>Designed for learning, not real banking</h2>
 
           <ul class="banner-list">
             <li>
-              <img class="bullet-icon" src="../../images/money.png" alt="icon">
-              <span>No real money required</span>
+              <img src="../../images/money.png" class="bullet-icon" alt="">
+              No real money required
             </li>
             <li>
-              <img class="bullet-icon" src="../../images/data.png" alt="icon">
-              <span>Practice with sample data</span>
+              <img src="../../images/data.png" class="bullet-icon" alt="">
+              Practice with sample data
             </li>
             <li>
-              <img class="bullet-icon" src="../../images/classroom.png" alt="icon">
-              <span>Classroom friendly interface</span>
+              <img src="../../images/classroom.png" class="bullet-icon" alt="">
+              Classroom friendly interface
             </li>
           </ul>
         </div>
 
         <div class="banner-media">
-          <img src="../../images/banner.png" alt="Demo illustration" />
+          <img src="../../images/banner.png" alt="Demo illustration">
         </div>
+
       </div>
     </section>
+
   </main>
 
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileOverlay = document.getElementById('mobileOverlay');
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    function openMenu() {
-      hamburger.classList.add('open');
-      mobileMenu.classList.add('open');
-      mobileOverlay.hidden = false;
-      hamburger.setAttribute('aria-expanded', 'true');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      mobileOverlay.hidden = true;
-      hamburger.setAttribute('aria-expanded', 'false');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('open')) closeMenu();
-      else openMenu();
-    });
-
-    mobileOverlay.addEventListener('click', closeMenu);
-
-    
-    document.querySelectorAll('#mobileMenu .nav-item').forEach(a => {
-      a.addEventListener('click', () => closeMenu());
-    });
-
-   
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("open");
+      mobileMenu.classList.toggle("open");
     });
   </script>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2026 TrustPay — Demo</div>
-      <div class="footer-links">
-        <a href="#">Privacy</a> · <a href="#">Terms</a>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
+
 
 
 
