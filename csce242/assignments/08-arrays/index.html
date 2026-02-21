@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Assignment 8 — Arrays (Mood Player)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card" id="main-content">
+    <header class="card-header" id="main-header">
+      <h1>Assignment 8</h1>
+      <h2>Arrays</h2>
+    </header>
+
+    <section class="controls">
+      <label for="moodSelect" class="mood-label">Pick Your Mood</label>
+      <select id="moodSelect" aria-label="Select mood">
+        <option value="">Select</option>
+        <option value="Happy">Happy</option>
+        <option value="Sad">Sad</option>
+      </select>
+    </section>
+
+    <nav id="songList" class="song-list" aria-live="polite">
+      <!-- Links injected here -->
+    </nav>
+
+    <section id="playerArea" class="player-area" hidden>
+      <!-- iframe injected here -->
+    </section>
+
+    <footer class="signature">@mahipatelr.com</footer>
+  </main>
+
+  <!-- Professor-style: scripts placed at the end -->
+  <script src="js/mood-player.js"></script>  <!-- <--- your mood script (new file) -->
+</body>
+</html>

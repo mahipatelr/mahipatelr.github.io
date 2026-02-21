@@ -1,0 +1,172 @@
+/* ============================= */
+/* Root + Base Styles */
+/* ============================= */
+
+:root{
+  --bg: #f3f6f0;
+  --card-bg: #eff3ea;
+  --teal: #3d8a87;
+  --coral: #d97a7a;
+  --muted: #6a7a79;
+  --accent-border: #2f5e5c;
+  --max-width: 740px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html, body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============================= */
+/* Main Card Layout */
+/* ============================= */
+
+main.card{
+  max-width:var(--max-width);
+  margin:36px auto;
+  background:var(--card-bg);
+  padding:34px 28px;
+  border-radius:6px;
+  box-shadow: 0 6px 18px rgba(25,30,25,0.06);
+  text-align:center;
+}
+
+.card-header h1{
+  margin:0;
+  font-size:38px;
+  color:var(--teal);
+  letter-spacing:0.5px;
+}
+
+.card-header h2{
+  margin:6px 0 20px;
+  color:var(--coral);
+  font-weight:600;
+  font-size:20px;
+}
+
+/* ============================= */
+/* Controls */
+/* ============================= */
+
+.controls{
+  margin-bottom:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+.mood-label{
+  font-size:16px;
+}
+
+select#moodSelect{
+  padding:8px 10px;
+  border-radius:4px;
+  border:1px solid #9fb3b1;
+  background:white;
+  font-size:14px;
+  outline:none;
+}
+
+/* ============================= */
+/* Song List */
+/* ============================= */
+
+.song-list{
+  margin:18px auto;
+  text-align:left;
+  max-width:580px;
+}
+
+.song-list a{
+  display:block;
+  text-decoration:underline;
+  color:#2e6f6d;
+  padding:8px 6px;
+  margin:6px 0;
+  border-radius:4px;
+  transition:background 0.2s ease;
+}
+
+.song-list a:hover,
+.song-list a:focus{
+  background: rgba(47,94,92,0.06);
+  outline:none;
+}
+
+.song-list a.active{
+  border:1px solid var(--accent-border);
+  background:#ffffff;
+  box-shadow: 0 0 0 3px rgba(47,94,92,0.06) inset;
+}
+
+/* ============================= */
+/* Player Area */
+/* ============================= */
+
+.player-area{
+  margin-top:16px;
+  max-width:740px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Responsive iframe container */
+
+.embed-wrap{
+  position:relative;
+  width:100%;
+  max-width:720px;
+  padding-bottom:56.25%; /* 16:9 */
+  height:0;
+  overflow:hidden;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(25,30,25,0.08);
+  background:#000;
+}
+
+.embed-wrap iframe{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ============================= */
+/* Watch Fallback Link */
+/* ============================= */
+
+.watch-link{
+  margin-top:8px;
+  color:var(--coral);
+  font-weight:600;
+  text-decoration:underline;
+  transition:opacity 0.2s ease;
+}
+
+.watch-link:hover{
+  opacity:0.7;
+}
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+
+.signature{
+  margin-top:22px;
+  color:var(--coral);
+  font-weight:600;
+}
