@@ -1,6 +1,3 @@
-// js/mood-player.js
-// Modern arrow-function style, const/let, DOMContentLoaded
-
 const songs = {
   Happy: {
     "Happy — Pharrell Williams": "https://www.youtube.com/embed/ZbZSe6N_BXs",
@@ -10,8 +7,8 @@ const songs = {
     "I'm Walking on Sunshine — Katrina & The Waves": "https://www.youtube.com/embed/iPUmE-tne5U"
   },
   Sad: {
-    "Happier Than Ever — Billie Eilish": "https://www.youtube.com/embed/1tq1_J3U0Y4",
-    "Someone You Loved — Lewis Capaldi": "https://www.youtube.com/embed/bCuhuePlwK8",
+    "Happier Than Ever — Billie Eilish": "https://www.youtube.com/embed/5GJWxDKyk3A",
+    "Someone You Loved — Lewis Capaldi": "https://www.youtube.com/embed/zABLecsR5UE",
     "Someone Like You — Adele": "https://www.youtube.com/embed/hLQl3WQQoQ0",
     "Fix You — Coldplay": "https://www.youtube.com/embed/k4V3Mo61fJM",
     "Hurt — Johnny Cash": "https://www.youtube.com/embed/8AHCfZTRGiI"
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Arrow function handlers
+  
   const clearPlayer = () => {
     playerArea.innerHTML = "";
     playerArea.hidden = true;
@@ -46,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playerArea.innerHTML = "";
     playerArea.hidden = false;
 
-    // get video id and use youtube-nocookie as privacy-friendly domain
+    
     const parts = embedUrl.split("/");
     const videoId = parts[parts.length - 1] || "";
     const nocookieSrc = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`;
@@ -64,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wrap.appendChild(iframe);
     playerArea.appendChild(wrap);
 
-    // fallback watch link (useful if embedding is blocked)
+    
     const watchWrap = document.createElement("div");
     watchWrap.style.marginTop = "8px";
     watchWrap.style.textAlign = "center";
@@ -106,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(`Rendered ${Object.keys(list).length} songs for mood "${mood}"`);
   };
 
-  // Mood select change event
+  
   moodSelect.addEventListener("change", (e) => {
     const mood = e.target.value;
     console.log("Mood selected:", mood);
@@ -114,13 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSongListForMood(mood);
   });
 
-  // If the select already has a value when the page loads, render it
+  
   if (moodSelect.value) {
     console.log("Initial mood detected:", moodSelect.value);
     renderSongListForMood(moodSelect.value);
   }
 
-  // Expose debug helpers (convenient while developing)
+  
   window._moodDebug = {
     render: (m) => renderSongListForMood(m),
     show: (url, name) => showEmbed(url, name)
