@@ -1,48 +1,287 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TrustPay - Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Homepage</title>
+  <!-- styles.css must be in the same folder as this file -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hover preview for hero CTA (small, unobtrusive) */
+    .preview-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .preview-card {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(100% + 12px);
+      width: 320px;
+      background: linear-gradient(180deg, rgba(10,28,58,0.98), rgba(6,18,38,0.98));
+      color: var(--text-white);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 16px 40px rgba(2,8,20,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      display: none;
+      z-index: 140;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .preview-card h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--blue-electric);
+    }
+
+    .preview-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    /* show on hover or keyboard focus */
+    .preview-link:hover .preview-card,
+    .preview-link:focus-within .preview-card {
+      display: block;
+    }
+
+    /* keep preview from going off-screen on very small widths */
+    @media (max-width: 420px) {
+      .preview-card { left: 8px; right: 8px; transform: none; width: auto; }
+    }
+  </style>
 </head>
+
+
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="../../images/logo.png" class="logo">
-      <span class="brand-name">TrustPay</span>
-    </div>
-    <nav class="desktop-menu">
-      <a href="index.html" class="nav-item active">Home</a>
-      <a href="wallet.html" class="nav-item">Wallet</a>
-      <a href="transactions.html" class="nav-item">Transactions</a>
-      <a href="#" class="nav-item">Learn</a>
-      <a href="#" class="nav-item">Support</a>
-    </nav>
-  </div>
-</header>
 
-<main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Understand your money —
-          <span class="accent">without using real money.</span>
-        </h1>
-        <p class="lead">
-          Practice with sample data and learn financial concepts safely.
-        </p>
-        <a href="wallet.html" class="btn primary">Try the Demo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+
+
+      <div class="brand">
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
       </div>
-      <img src="../../images/hero.png">
-    </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  © 2026 TrustPay — Demo
-</footer>
+
+      <nav class="main-nav">
+
+
+        <!-- Hamburger (only visible on mobile via CSS) -->
+        <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+
+        <!-- Mobile Slide Menu (hidden on desktop via CSS) -->
+        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item home">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+
+
+        <!-- Desktop Menu (visible on desktop only) -->
+        <div class="desktop-menu" role="menubar">
+          <a href="index.html" class="nav-item home" role="menuitem">Home</a>
+          <a href="wallet.html" class="nav-item" role="menuitem">Wallet</a>
+          <a href="transactions.html" class="nav-item" role="menuitem">Transactions</a>
+          <a href="learn.html" class="nav-item" role="menuitem">Learn</a>
+          <a href="support.html" class="nav-item" role="menuitem">Support</a>
+        </div>
+
+
+      </nav>
+
+
+    </div>
+  </header>
+
+
+  <main>
+
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+
+        <div class="hero-text">
+          <h1>
+            Understand your money —
+            <span class="accent">without using real money.</span>
+          </h1>
+
+
+          <p class="lead">
+            Practice with sample data, visualize transactions, and learn financial concepts in a safe classroom demo.
+          </p>
+
+
+          <div class="hero-cta">
+            <!-- TRY THE DEMO now LINKS to wallet.html and PREVIEWS the wallet -->
+            <span class="preview-link">
+              <a class="btn primary" href="wallet.html">Try the Demo</a>
+              <div class="preview-card" role="region" aria-label="Preview: Wallet">
+                <h4>Wallet — Preview</h4>
+                <p>View simulated balance, recent activity, and spending breakdown. (This preview shows the Wallet; click to open the full page.)</p>
+              </div>
+            </span>
+
+            <span class="preview-link">
+              <a class="btn outline" href="wallet.html">View Sample Transactions</a>
+              <div class="preview-card" role="region" aria-label="Preview: Transactions">
+                <h4>Transactions — Preview</h4>
+                <p>Browse sample purchases and learn how they affect your simulated balance. (Click to open the full Transactions / Wallet view.)</p>
+              </div>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="hero-media">
+          <img src="../../images/hero.png" alt="Product illustration">
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">What can you learn with TrustPay</h2>
+
+
+        <div class="feature-grid">
+
+
+          <a href="wallet.html" class="feature-link">
+            <article class="feature">
+              <img src="../../images/feature1.png" alt="Clear Balances" class="feature-img">
+              <h3>Clear Balances</h3>
+              <p>Track how balances change after each transaction with clear visualizations.</p>
+            </article>
+          </a>
+
+
+          <a href="wallet.html" class="feature-link">
+            <article class="feature">
+              <img src="../../images/feature2.png" alt="Transaction Explorer" class="feature-img">
+              <h3>Transaction Explorer</h3>
+              <p>Browse, filter, and inspect simulated payments with powerful search tools.</p>
+            </article>
+          </a>
+
+
+          <article class="feature">
+            <img src="../../images/feature3.png" alt="Spending Insights" class="feature-img">
+            <h3>Spending Insights</h3>
+            <p>Visualize patterns and trends so you can learn about budgeting and saving.</p>
+          </article>
+
+
+          <article class="feature">
+            <img src="../../images/feature4.png" alt="Safe Demo Mode" class="feature-img">
+            <h3>Safe Demo Mode</h3>
+            <p>Learn without real money or risk — experiment confidently in a sandbox environment.</p>
+          </article>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container banner-inner">
+
+
+        <div class="banner-text">
+          <h2>Designed for learning, not real banking</h2>
+
+
+          <ul class="banner-list">
+            <li>
+              <img src="../../images/money.png" class="bullet-icon" alt="">
+              No real money required
+            </li>
+            <li>
+              <img src="../../images/data.png" class="bullet-icon" alt="">
+              Practice with sample data
+            </li>
+            <li>
+              <img src="../../images/classroom.png" class="bullet-icon" alt="">
+              Classroom friendly interface
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="banner-media">
+          <img src="../../images/banner.png" alt="Demo illustration">
+        </div>
+
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
+
+  <script>
+    // hamburger toggle for mobile menu
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        mobileMenu.setAttribute("aria-hidden", !isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+    }
+  </script>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

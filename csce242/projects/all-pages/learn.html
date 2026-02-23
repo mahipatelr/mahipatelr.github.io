@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Learn</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --center-max: 960px;
+    }
+
+    /* Use medium-blue section as main background so blue fills the page */
+    main {
+      background: var(--bg-section);
+      padding-bottom: 80px;
+    }
+
+    .learn-hero {
+      padding: 84px 0 20px;
+      background: transparent;
+    }
+
+    .learn-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .learn-title {
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0 0 8px;
+      color: var(--text-white);
+    }
+
+    .learn-sub {
+      color: var(--blue-electric);
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+
+    /* ----------------------------
+       Top lesson cards - centered
+       ---------------------------- */
+    .center-row {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .lesson-grid {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      max-width: var(--center-max);
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .lesson-card {
+      width: 280px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lesson-card img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      margin-bottom: 2px;
+    }
+
+    .lesson-card h4 {
+      font-weight: 900;
+      margin: 6px 0 4px;
+      color: var(--text-white);
+    }
+
+    .lesson-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    .lesson-card .btn {
+      margin-top: auto;
+      text-decoration: none;
+    }
+
+    /* preview-link (same pattern as index) */
+    .preview-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .preview-card {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(100% + 12px);
+      width: 320px;
+      background: linear-gradient(180deg, rgba(10,28,58,0.98), rgba(6,18,38,0.98));
+      color: var(--text-white);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 16px 40px rgba(2,8,20,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      display: none;
+      z-index: 140;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .preview-card h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--blue-electric);
+    }
+
+    .preview-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    .preview-link:hover .preview-card,
+    .preview-link:focus-within .preview-card {
+      display: block;
+    }
+
+    /* ----------------------------
+       Centered two-column checklist (same centering)
+       ---------------------------- */
+    .check-columns {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+      max-width: var(--center-max);
+      width: 100%;
+      margin: 40px auto 60px;
+    }
+
+    .check-card {
+      width: 360px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.04));
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.03);
+      box-sizing: border-box;
+    }
+
+    .check-card h3 {
+      font-weight: 900;
+      margin-bottom: 14px;
+      font-size: 20px;
+      color: var(--text-white);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      color: var(--text-muted);
+      font-weight: 800;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .check-list .dot {
+      width: 12px;
+      height: 12px;
+      background: var(--blue-bright);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(77,163,255,0.18);
+      flex-shrink: 0;
+    }
+
+    .check-actions .btn {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    /* ----------------------------
+       Progress tracker
+       ---------------------------- */
+    .progress-section {
+      margin-top: 86px;
+      padding: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      max-width: var(--center-max);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .progress-section h3 {
+      text-align: left;
+      margin: 0 0 28px;
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--text-white);
+    }
+
+    .progress-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: flex-start; /* puts text slightly lower than badge */
+      gap: 20px;
+    }
+
+    .small-badge {
+      width: 68px;
+      height: 68px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .progress-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .progress-info {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.05;
+      margin-top: 8px; /* pushes the large text slightly down */
+      color: var(--text-white);
+    }
+
+    .progress-sub {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 1000px) {
+      .lesson-grid { gap: 20px; }
+      .check-columns { gap: 20px; }
+      .check-card { width: 100%; max-width: 480px; }
+      .lesson-card { width: 260px; }
+      .progress-section { padding: 20px; margin-top: 60px; }
+      .preview-card { left: 12px; transform: none; width: calc(100% - 24px); }
+      .progress-row { align-items: center; gap: 12px; flex-direction: row; }
+      .progress-info { font-size: 22px; margin-top: 6px; }
+    }
+
+    @media (max-width: 620px) {
+      .lesson-grid { flex-direction: column; align-items: center; }
+      .check-columns { flex-direction: column; align-items: center; }
+      .progress-row { flex-direction: column; align-items: flex-start; }
+      .progress-info { font-size: 20px; }
+      .small-badge { width: 56px; height: 56px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="brand">
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
+      </div>
+
+      <nav class="main-nav">
+        <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item home">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+
+        <div class="desktop-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item home">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="learn-hero">
+      <div class="learn-wrapper">
+
+        <h1 class="learn-title">Learn with TrustPay</h1>
+        <p class="learn-sub">Improve your financial literacy with our interactive lessons.</p>
+
+        <!-- TOP ROW: three cards centered -->
+        <div class="center-row">
+          <div class="lesson-grid">
+            <div class="lesson-card">
+              <img src="../../images/getting-started.png" alt="Getting Started">
+              <h4>Getting Started</h4>
+              <p>Understand wallet basics and set your first goals.</p>
+
+              <!-- START LESSON links to wallet.html and previews the Wallet -->
+              <span class="preview-link">
+                <a class="btn primary" href="wallet.html">Start Lesson</a>
+                <div class="preview-card" role="region" aria-label="Preview: Wallet">
+                  <h4>Wallet — Preview</h4>
+                  <p>Open the Wallet to view simulated balance and recent activity. (Click to open the full Wallet page.)</p>
+                </div>
+              </span>
+
+            </div>
+
+            <div class="lesson-card">
+              <img src="../../images/budgeting.png" alt="Budgeting Basics">
+              <h4>Budgeting Basics</h4>
+              <p>Learn how to make a simple, realistic budget you can keep.</p>
+              <a class="btn primary" href="transactions.html">Start Lesson</a>
+            </div>
+
+            <div class="lesson-card">
+              <img src="../../images/transaction.png" alt="Transaction">
+              <h4>Transaction</h4>
+              <p>Explore how transactions affect your balance and spending.</p>
+              <a class="btn primary" href="transactions.html">Start Lesson</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECOND ROW: two check-cards centered like the top row -->
+        <div class="check-columns">
+          <div class="check-card">
+            <h3>Getting Started</h3>
+            <ul class="check-list">
+              <li><span class="dot"></span> Understanding Wallet Basics</li>
+              <li><span class="dot"></span> Setting Financial Goals</li>
+            </ul>
+            <div class="check-actions">
+              <!-- CONTINUE links to wallet.html and previews the Wallet -->
+              <span class="preview-link">
+                <a class="btn primary" href="wallet.html">Continue</a>
+                <div class="preview-card" role="region" aria-label="Preview: Wallet">
+                  <h4>Wallet — Preview</h4>
+                  <p>Continue by opening the Wallet to follow along with the Getting Started steps.</p>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="check-card">
+            <h3>Budgeting Basics</h3>
+            <ul class="check-list">
+              <li><span class="dot"></span> Creating a Budget</li>
+              <li><span class="dot"></span> Expense Tracking</li>
+            </ul>
+            <div class="check-actions">
+              <a class="btn primary" href="transactions.html">Continue</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRESS TRACKER -->
+        <div class="progress-section">
+          <h3>Progress Tracker</h3>
+
+          <div class="progress-list">
+            <div class="progress-row">
+              <img src="../../images/badge-beginner.png" class="small-badge" alt="Beginner">
+              <div class="progress-body">
+                <div class="progress-info">Beginner Level</div>
+                <div class="progress-sub">45 / 75 points</div>
+              </div>
+            </div>
+
+            <div class="progress-row">
+              <img src="../../images/badge-intermediate.png" class="small-badge" alt="Intermediate">
+              <div class="progress-body">
+                <div class="progress-info">Intermediate</div>
+                <div class="progress-sub">Locked — complete Beginner level to unlock</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
+  <script>
+    // hamburger toggle
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        mobileMenu.setAttribute("aria-hidden", !isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

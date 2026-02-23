@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Getting Started — TrustPay</title>
+
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .article-hero {
+      padding: 72px 0 28px;
+      background: linear-gradient(180deg, rgba(10,24,48,0.04), rgba(6,18,38,0.02));
+    }
+    .article-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 18px 80px;
+    }
+    .article-title {
+      font-size: 34px;
+      font-weight: 900;
+      margin: 0 0 10px;
+      color: var(--text-white);
+    }
+    .article-lead {
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .article-content {
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+      border-radius: 12px;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.03);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+    .article-back {
+      display:inline-block;
+      margin-top:18px;
+      text-decoration:none;
+      color:var(--blue-bright);
+      font-weight:800;
+    }
+    @media (max-width:900px){
+      .article-title{font-size:28px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
+      </div>
+
+      <nav class="main-nav">
+        <button id="hamburgerArticle1" class="hamburger" aria-expanded="false" aria-controls="mobileMenuArticle1">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="mobileMenuArticle1" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+
+        <div class="desktop-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="article-hero">
+      <div class="article-wrap">
+        <h1 class="article-title">Getting Started with TrustPay</h1>
+        <p class="article-lead">A quick guide to using your simulated wallet and getting familiar with the demo environment.</p>
+
+        <article class="article-content">
+          <h2>Introduction</h2>
+          <p>Welcome to TrustPay's demo wallet! This guide walks you through the essentials so you can start exploring simulated transactions, tracking balances, and practicing budgeting — all without real money.</p>
+
+          <h3>Step 1 — Explore the Wallet</h3>
+          <p>Open the <strong>Wallet</strong> page to view your simulated balance and the activity chart. Use the "Simulated Balance" pill to quickly recognize demo mode and practice interpreting transactions.</p>
+
+          <h3>Step 2 — Browse Transactions</h3>
+          <p>Visit <strong>Transactions</strong> to see a list of sample purchases, income, and transfers. You can use these to learn how categories and balances update over time.</p>
+
+          <h3>Step 3 — Try Lessons</h3>
+          <p>Head to the <strong>Learn</strong> page for guided lessons like Getting Started and Budgeting Basics — complete checkpoints and track your progress in the Progress Tracker.</p>
+
+          <p class="article-note" style="margin-top:14px;color:var(--text-muted);font-size:14px;">
+            Note: This demo environment uses sample data only — no real money is involved.
+          </p>
+
+          <a class="article-back" href="support.html">← Back to Support</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 TrustPay — Demo</footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburgerArticle1");
+    const mobileMenu = document.getElementById("mobileMenuArticle1");
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        mobileMenu.setAttribute("aria-hidden", !isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+    }
+  </script>
+</body>
+</html>
+

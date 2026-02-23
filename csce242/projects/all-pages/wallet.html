@@ -1,48 +1,155 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TrustPay - Wallet</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Wallet Overview</title>
+  <!-- styles.css is expected to be in the same folder as this HTML (projects/all-pages/styles.css) -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="../../images/logo.png" class="logo">
-      <span class="brand-name">TrustPay</span>
-    </div>
-    <nav class="desktop-menu">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="wallet.html" class="nav-item active">Wallet</a>
-      <a href="transactions.html" class="nav-item">Transactions</a>
-      <a href="#" class="nav-item">Learn</a>
-      <a href="#" class="nav-item">Support</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
 
-<main>
-  <section class="wallet-hero container">
-    <h1 class="wallet-title">Wallet Overview</h1>
-    <p class="wallet-sub">Stimulated balance and activity</p>
-    <div class="wallet-cta-row">
-      <div class="cta-pill">STIMULATED BALANCE</div>
-      <div class="wallet-amount">$5,420.00</div>
-    </div>
-  </section>
+      <div class="brand">
+        <!-- two levels up to reach the repo root images folder -->
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
+      </div>
 
-  <section class="container">
-    <div class="chart-card">
-      <img src="../../images/wallet-graph.png" class="chart-img">
-    </div>
-  </section>
-</main>
+      <nav class="main-nav">
 
-<footer class="site-footer">
-  © 2026 TrustPay — Demo
-</footer>
+        <!-- Hamburger -->
+        <button id="hamburgerWallet" class="hamburger" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenuWallet" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item home">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="desktop-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item home">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item">Support</a>
+        </div>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- TOP SECTION -->
+    <section class="wallet-hero">
+      <div class="container wallet-hero-inner">
+
+        <h1 class="wallet-title">Wallet Overview</h1>
+        <p class="wallet-sub">Stimulated balance and activity</p>
+
+        <div class="wallet-cta-row-centered">
+          <span class="cta-pill-long">STIMULATED BALANCE</span>
+          <div class="wallet-large-balance-centered">$5,420.00</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CURRENT BALANCE SECTION -->
+    <section class="wallet-main container">
+
+      <div class="wallet-section">
+        <h3 class="section-subtitle">Current Balance</h3>
+
+        <div class="chart-card">
+
+          <div class="chart-title">Balance chart</div>
+
+          <!-- two levels up to reach images folder -->
+          <img src="../../images/wallet-graph.png"
+               alt="Balance chart"
+               class="chart-img">
+
+          <div class="chart-balance-overlay">$5,420.00</div>
+
+          <div class="chart-note">No real money involved</div>
+
+        </div>
+      </div>
+
+      <!-- SPENDING BREAKDOWN -->
+      <div class="wallet-section">
+        <h3 class="section-subtitle">Spending Breakdown</h3>
+
+        <div class="spend-block">
+
+          <div class="donut-wrap">
+            <img src="../../images/donut.png"
+                 alt="Spending donut"
+                 class="donut-img">
+          </div>
+
+          <ul class="spend-legend">
+            <li>
+              <span><span class="legend-dot dot-food"></span>Food</span>
+              <span class="legend-value">42%</span>
+            </li>
+            <li>
+              <span><span class="legend-dot dot-shopping"></span>Shopping</span>
+              <span class="legend-value">28%</span>
+            </li>
+            <li>
+              <span><span class="legend-dot dot-travel"></span>Travel</span>
+              <span class="legend-value">16%</span>
+            </li>
+            <li>
+              <span><span class="legend-dot dot-other"></span>Other</span>
+              <span class="legend-value">14%</span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburgerWallet");
+    const mobileMenu = document.getElementById("mobileMenuWallet");
+
+    hamburger.addEventListener("click", () => {
+      const expanded = hamburger.classList.toggle("open");
+      mobileMenu.classList.toggle("open");
+      mobileMenu.setAttribute("aria-hidden", !expanded);
+      hamburger.setAttribute("aria-expanded", expanded);
+    });
+  </script>
 
 </body>
 </html>
+
+
+
+
+
+
+

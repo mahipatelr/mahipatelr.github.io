@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Support</title>
+
+  <!-- main stylesheet used by all pages -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- page-specific styles (kept minimal; only preview added) -->
+  <style>
+    /* KEEP the look you had before */
+    .support-hero {
+      padding: 68px 0 20px;
+      background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
+    }
+
+    .support-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .support-title {
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0 0 6px;
+      color: var(--text-white);
+    }
+
+    .support-sub {
+      color: var(--text-muted);
+      margin: 0 0 20px;
+    }
+
+    /* Search */
+    .support-search {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin: 8px 0 24px;
+      max-width: 880px;
+    }
+
+    .support-search input[type="search"] {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      color: var(--text-white);
+      font-size: 15px;
+    }
+
+    .support-search button {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* Contact/action cards row */
+    .contact-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      flex: 1;
+      min-width: 200px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .contact-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: white;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .contact-body {
+      flex: 1;
+    }
+
+    .contact-title {
+      font-weight: 900;
+      margin: 0 0 6px;
+      color: var(--text-white);
+    }
+
+    .contact-sub {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* Help articles list (unchanged styling) */
+    .help-list {
+      margin-top: 8px;
+      max-width: 880px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+    }
+
+    .help-item {
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+      color: var(--text-white);
+      text-decoration: none;
+      position: relative; /* for preview positioning */
+    }
+
+    .help-item:last-child { border-bottom: none; }
+
+    .help-left {
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+
+    .help-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:900;
+      flex-shrink: 0;
+    }
+
+    .help-title {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .help-subtext {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* Chat CTA */
+    .chat-cta {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 18px;
+      z-index: 220;
+      background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+      color: #fff;
+      padding: 14px 38px;
+      border-radius: 10px;
+      font-weight: 900;
+      box-shadow: 0 10px 36px rgba(43,139,255,0.18);
+      text-decoration: none;
+    }
+
+    /* Responsive small screens */
+    @media (max-width: 900px) {
+      .contact-row { flex-direction: column; }
+      .support-search { flex-direction: column; align-items: stretch; }
+      .support-search button { width: 100%; }
+      .chat-cta { left: 12px; transform: none; right: 12px; bottom: 14px; }
+      .help-item { padding: 14px; }
+    }
+
+    /* ------------------------
+       PREVIEW card for Getting Started
+       (only this is added)
+       ------------------------ */
+    .help-item .preview {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 22px;
+      width: 360px;
+      background: linear-gradient(180deg, rgba(6,18,38,0.98), rgba(10,28,58,0.98));
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 20px 50px rgba(2,8,20,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      z-index: 190;
+      color: var(--text-white);
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .help-item:focus-within .preview,
+    .help-item:hover .preview {
+      display: block;
+    }
+
+    .preview h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--blue-electric);
+    }
+
+    .preview p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* On narrow screens make the preview flow below the item rather than absolute */
+    @media (max-width: 640px) {
+      .help-item .preview {
+        position: static;
+        width: auto;
+        margin-top: 10px;
+      }
+      .help-item { flex-direction: column; align-items: flex-start; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="brand">
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
+      </div>
+
+      <nav class="main-nav">
+        <button id="hamburgerSupport" class="hamburger" aria-expanded="false" aria-controls="mobileMenuSupport">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="mobileMenuSupport" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item home">Support</a>
+        </div>
+
+        <div class="desktop-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item home">Support</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="support-hero">
+      <div class="support-wrapper">
+
+        <h1 class="support-title">Support</h1>
+        <p class="support-sub">How can we assist you?</p>
+
+        <!-- Search -->
+        <div class="support-search">
+          <input type="search" aria-label="Search FAQs" placeholder="Search FAQs" />
+          <button aria-label="Search">Search</button>
+        </div>
+
+        <!-- Contact/action cards -->
+        <div class="contact-row">
+          <div class="contact-card" role="button" tabindex="0">
+            <div class="contact-icon">☎</div>
+            <div class="contact-body">
+              <div class="contact-title">Call us anytime</div>
+              <p class="contact-sub">+1 (800) 123-4567</p>
+            </div>
+          </div>
+
+          <a href="mailto:support@trustpay.com" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">@</div>
+            <div class="contact-body">
+              <div class="contact-title">Send us an email</div>
+              <p class="contact-sub">support@trustpay.com</p>
+            </div>
+          </a>
+
+          <a href="#" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">💬</div>
+            <div class="contact-body">
+              <div class="contact-title">Start live chat</div>
+              <p class="contact-sub">Chat with our support team</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Help articles list -->
+        <div class="help-list" aria-label="Help articles">
+
+          <!-- GETTING STARTED — kept exactly where it was; added preview and retained clickable link -->
+          <a class="help-item" href="article-getting-started.html">
+            <div class="help-left">
+              <div class="help-icon">✓</div>
+              <div>
+                <div class="help-title">Getting Started with TrustPay</div>
+                <div class="help-subtext">How to begin using your demo wallet</div>
+              </div>
+            </div>
+
+            <!-- small preview that appears on hover/focus; only addition -->
+            <div class="preview" aria-hidden="false">
+              <h4>Getting Started — Preview</h4>
+              <p>Quick tour: view your simulated balance, explore sample transactions, and try a first lesson in Wallet — all with sample data, no real money involved.</p>
+            </div>
+
+            <div class="help-arrow">›</div>
+          </a>
+
+          <!-- Other help items unchanged -->
+          <a class="help-item" href="article-transaction-issue.html">
+            <div class="help-left">
+              <div class="help-icon">!</div>
+              <div>
+                <div class="help-title">How to Report a Transaction Issue</div>
+                <div class="help-subtext">Step-by-step guide to flag a simulated transaction</div>
+              </div>
+            </div>
+            <div class="help-arrow">›</div>
+          </a>
+
+          <a class="help-item" href="article-securing-account.html">
+            <div class="help-left">
+              <div class="help-icon">🔒</div>
+              <div>
+                <div class="help-title">Securing Your Account</div>
+                <div class="help-subtext">Best practices for demo accounts</div>
+              </div>
+            </div>
+            <div class="help-arrow">›</div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
+  <!-- Sticky Chat CTA -->
+  <a class="chat-cta" href="#" role="button" aria-label="Chat with us">Chat with us!</a>
+
+  <script>
+    // hamburger toggle for mobile menu
+    const hamburger = document.getElementById("hamburgerSupport");
+    const mobileMenu = document.getElementById("mobileMenuSupport");
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        mobileMenu.setAttribute("aria-hidden", !isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
+

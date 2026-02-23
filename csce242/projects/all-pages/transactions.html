@@ -1,67 +1,272 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TrustPay - Transactions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Transactions</title>
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Transactions page specific styles */
+
+    .transactions-hero {
+      padding: 70px 0 80px;
+      background: var(--bg-section); /* medium-blue section background */
+    }
+
+    .transactions-title {
+      font-size: 42px;
+      font-weight: 900;
+      margin: 0 0 8px;
+    }
+
+    .transactions-sub {
+      color: var(--blue-electric);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .transactions-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+
+    .transactions-table thead th {
+      text-align: left;
+      padding: 20px 12px;
+      font-weight: 800;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .transactions-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s ease;
+    }
+
+    .transactions-table tbody tr:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .transactions-table td {
+      padding: 24px 12px;
+      color: var(--text-white);
+    }
+
+    .amount {
+      text-align: right;
+      font-weight: 800;
+    }
+
+    .negative {
+      color: #ff9aa2;
+    }
+
+    .positive {
+      color: #8ff2a6;
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
+
     <div class="brand">
-      <img src="../../images/logo.png" class="logo">
+      <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
       <span class="brand-name">TrustPay</span>
     </div>
-    <nav class="desktop-menu">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="wallet.html" class="nav-item">Wallet</a>
-      <a href="transactions.html" class="nav-item active">Transactions</a>
-      <a href="#" class="nav-item">Learn</a>
-      <a href="#" class="nav-item">Support</a>
+
+    <nav class="main-nav">
+
+      <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="wallet.html" class="nav-item">Wallet</a>
+        <a href="transactions.html" class="nav-item home">Transactions</a>
+        <a href="learn.html" class="nav-item">Learn</a>
+        <a href="support.html" class="nav-item">Support</a>
+      </div>
+
+      <div class="desktop-menu">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="wallet.html" class="nav-item">Wallet</a>
+        <a href="transactions.html" class="nav-item home">Transactions</a>
+        <a href="learn.html" class="nav-item">Learn</a>
+        <a href="support.html" class="nav-item">Support</a>
+      </div>
+
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="transactions-hero container">
-    <h1 class="transactions-title">Transactions Overview</h1>
-    <p class="transactions-sub">Stimulated Transactions List</p>
-  </section>
 
-  <section class="container">
-    <div class="table-wrap">
+  <section class="transactions-hero">
+    <div class="transactions-wrapper">
+
+      <h1 class="transactions-title">Transactions Overview</h1>
+      <p class="transactions-sub">Simulated transactions used for demo and learning</p>
+
       <table class="transactions-table">
         <thead>
           <tr>
             <th>Date</th>
-            <th>Name</th>
+            <th>Merchant</th>
             <th>Category</th>
-            <th>Amount</th>
+            <th class="amount">Amount</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
-            <td>4/23</td>
+            <td>04/23</td>
             <td>Coffee Shop</td>
             <td>Food</td>
-            <td>- $4.00</td>
+            <td class="amount negative">-$4.00</td>
           </tr>
+
           <tr>
-            <td>4/19</td>
+            <td>04/22</td>
+            <td>Grocery Store</td>
+            <td>Shopping</td>
+            <td class="amount negative">-$38.20</td>
+          </tr>
+
+          <tr>
+            <td>04/21</td>
+            <td>Public Transit</td>
+            <td>Transport</td>
+            <td class="amount negative">-$2.50</td>
+          </tr>
+
+          <tr>
+            <td>04/19</td>
             <td>Paycheck</td>
             <td>Income</td>
-            <td>+ $500.00</td>
+            <td class="amount positive">+$500.00</td>
           </tr>
+
+          <tr>
+            <td>04/18</td>
+            <td>Gas Station</td>
+            <td>Transport</td>
+            <td class="amount negative">-$42.75</td>
+          </tr>
+
+          <tr>
+            <td>04/17</td>
+            <td>Food Delivery</td>
+            <td>Food</td>
+            <td class="amount negative">-$12.32</td>
+          </tr>
+
+          <tr>
+            <td>04/16</td>
+            <td>Online Store</td>
+            <td>Shopping</td>
+            <td class="amount negative">-$89.99</td>
+          </tr>
+
+          <tr>
+            <td>04/15</td>
+            <td>Streaming Service</td>
+            <td>Entertainment</td>
+            <td class="amount negative">-$14.99</td>
+          </tr>
+
+          <tr>
+            <td>04/14</td>
+            <td>Gym Membership</td>
+            <td>Health</td>
+            <td class="amount negative">-$35.00</td>
+          </tr>
+
+          <tr>
+            <td>04/12</td>
+            <td>Credit Card Payment</td>
+            <td>Payments</td>
+            <td class="amount negative">-$800.00</td>
+          </tr>
+
+          <tr>
+            <td>04/10</td>
+            <td>Bookstore</td>
+            <td>Shopping</td>
+            <td class="amount negative">-$22.40</td>
+          </tr>
+
+          <tr>
+            <td>04/08</td>
+            <td>Restaurant</td>
+            <td>Food</td>
+            <td class="amount negative">-$46.75</td>
+          </tr>
+
+          <tr>
+            <td>04/06</td>
+            <td>Electric Bill</td>
+            <td>Utilities</td>
+            <td class="amount negative">-$120.00</td>
+          </tr>
+
+          <tr>
+            <td>04/05</td>
+            <td>Freelance Payment</td>
+            <td>Income</td>
+            <td class="amount positive">+$320.00</td>
+          </tr>
+
+          <tr>
+            <td>04/02</td>
+            <td>Pharmacy</td>
+            <td>Health</td>
+            <td class="amount negative">-$18.65</td>
+          </tr>
+
         </tbody>
       </table>
+
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
   © 2026 TrustPay — Demo
 </footer>
 
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = hamburger.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+    mobileMenu.setAttribute("aria-hidden", !isOpen);
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
