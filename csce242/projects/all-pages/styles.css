@@ -1,0 +1,277 @@
+/* ===============================
+   GLOBAL VARIABLES
+================================ */
+:root {
+  --bg-top: #041022;
+  --bg-mid: #06142b;
+  --bg-bottom: #08204a;
+
+  --bg-card: #0e3358;
+
+  --blue-primary: #2b8bff;
+  --blue-bright: #4da3ff;
+  --blue-electric: #6fc3ff;
+
+  --text-white: #ffffff;
+  --text-muted: #c7d4ea;
+
+  --radius: 14px;
+  --max-width: 1200px;
+}
+
+/* ===============================
+   BASE LAYOUT
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-white);
+
+  background: linear-gradient(
+    180deg,
+    var(--bg-top) 0%,
+    var(--bg-mid) 55%,
+    var(--bg-bottom) 100%
+  );
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: min(var(--max-width), 96%);
+  margin: 0 auto;
+}
+
+/* ===============================
+   HEADER & NAV
+================================ */
+.site-header {
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(5, 18, 40, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-item {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-item:hover {
+  color: var(--blue-bright);
+}
+
+.active {
+  color: var(--blue-electric);
+}
+
+/* ===============================
+   HERO (Homepage)
+================================ */
+.hero {
+  padding: 90px 0 50px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.accent {
+  color: var(--blue-electric);
+}
+
+.lead {
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-bright));
+  color: white;
+}
+
+/* ===============================
+   WALLET PAGE
+================================ */
+.wallet-hero {
+  padding: 60px 0 30px;
+}
+
+.wallet-title {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.wallet-sub {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.wallet-cta-row {
+  text-align: center;
+}
+
+.cta-pill {
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-bright));
+  padding: 14px 40px;
+  border-radius: var(--radius);
+  display: inline-block;
+  font-weight: 700;
+}
+
+.wallet-amount {
+  font-size: 44px;
+  font-weight: 900;
+  margin-top: 16px;
+}
+
+.chart-card {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at center, #1a4c85, #0c2b52);
+}
+
+.chart-img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===============================
+   TRANSACTIONS PAGE
+================================ */
+.transactions-hero {
+  padding: 60px 0 30px;
+}
+
+.transactions-title {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.transactions-sub {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.table-wrap {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.transactions-table th {
+  color: var(--text-muted);
+}
+
+.transactions-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.transactions-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.site-footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .desktop-menu {
+    gap: 16px;
+  }
+}
