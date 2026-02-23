@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TrustPay — Support</title>
 
-  <!-- main stylesheet used by all pages -->
+  
   <link rel="stylesheet" href="styles.css">
 
-  <!-- page-specific styles (kept minimal; only preview added) -->
+  
   <style>
-    /* KEEP the look you had before */
     .support-hero {
       padding: 68px 0 20px;
       background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
@@ -63,7 +62,7 @@
       cursor: pointer;
     }
 
-    /* Contact/action cards row */
+    /* action cards row */
     .contact-row {
       display: flex;
       gap: 18px;
@@ -113,7 +112,7 @@
       font-size: 13px;
     }
 
-    /* Help articles list (unchanged styling) */
+    /* Help articles list  */
     .help-list {
       margin-top: 8px;
       max-width: 880px;
@@ -132,7 +131,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.02);
       color: var(--text-white);
       text-decoration: none;
-      position: relative; /* for preview positioning */
+      position: relative; 
     }
 
     .help-item:last-child { border-bottom: none; }
@@ -183,7 +182,7 @@
       text-decoration: none;
     }
 
-    /* Responsive small screens */
+    
     @media (max-width: 900px) {
       .contact-row { flex-direction: column; }
       .support-search { flex-direction: column; align-items: stretch; }
@@ -192,10 +191,7 @@
       .help-item { padding: 14px; }
     }
 
-    /* ------------------------
-       PREVIEW card for Getting Started
-       (only this is added)
-       ------------------------ */
+    
     .help-item .preview {
       display: none;
       position: absolute;
@@ -231,7 +227,7 @@
       line-height: 1.35;
     }
 
-    /* On narrow screens make the preview flow below the item rather than absolute */
+   
     @media (max-width: 640px) {
       .help-item .preview {
         position: static;
@@ -245,7 +241,7 @@
 </head>
 <body>
 
-  <!-- header -->
+  
   <header class="site-header">
     <div class="container header-inner">
 
@@ -321,7 +317,7 @@
         <!-- Help articles list -->
         <div class="help-list" aria-label="Help articles">
 
-          <!-- GETTING STARTED — kept exactly where it was; added preview and retained clickable link -->
+          
           <a class="help-item" href="article-getting-started.html">
             <div class="help-left">
               <div class="help-icon">✓</div>
@@ -331,7 +327,7 @@
               </div>
             </div>
 
-            <!-- small preview that appears on hover/focus; only addition -->
+            
             <div class="preview" aria-hidden="false">
               <h4>Getting Started — Preview</h4>
               <p>Quick tour: view your simulated balance, explore sample transactions, and try a first lesson in Wallet — all with sample data, no real money involved.</p>
@@ -340,7 +336,7 @@
             <div class="help-arrow">›</div>
           </a>
 
-          <!-- Other help items unchanged -->
+          
           <a class="help-item" href="article-transaction-issue.html">
             <div class="help-left">
               <div class="help-icon">!</div>
@@ -372,7 +368,7 @@
     © 2026 TrustPay — Demo
   </footer>
 
-  <!-- Sticky Chat CTA -->
+  
   <a class="chat-cta" href="#" role="button" aria-label="Chat with us">Chat with us!</a>
 
   <script>

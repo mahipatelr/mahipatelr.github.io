@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TrustPay — Homepage</title>
-  <!-- styles.css must be in the same folder as this file -->
+  
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Hover preview for hero CTA (small, unobtrusive) */
+    
     .preview-link {
       position: relative;
       display: inline-block;
@@ -44,13 +44,13 @@
       line-height: 1.25;
     }
 
-    /* show on hover or keyboard focus */
+   
     .preview-link:hover .preview-card,
     .preview-link:focus-within .preview-card {
       display: block;
     }
 
-    /* keep preview from going off-screen on very small widths */
+    
     @media (max-width: 420px) {
       .preview-card { left: 8px; right: 8px; transform: none; width: auto; }
     }
@@ -74,7 +74,7 @@
       <nav class="main-nav">
 
 
-        <!-- Hamburger (only visible on mobile via CSS) -->
+       
         <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobileMenu">
           <span></span>
           <span></span>
@@ -82,7 +82,7 @@
         </button>
 
 
-        <!-- Mobile Slide Menu (hidden on desktop via CSS) -->
+        
         <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
           <a href="index.html" class="nav-item home">Home</a>
           <a href="wallet.html" class="nav-item">Wallet</a>
@@ -92,7 +92,7 @@
         </div>
 
 
-        <!-- Desktop Menu (visible on desktop only) -->
+        
         <div class="desktop-menu" role="menubar">
           <a href="index.html" class="nav-item home" role="menuitem">Home</a>
           <a href="wallet.html" class="nav-item" role="menuitem">Wallet</a>
@@ -129,8 +129,7 @@
           </p>
 
 
-          <div class="hero-cta">
-            <!-- TRY THE DEMO now LINKS to wallet.html and PREVIEWS the wallet -->
+          <div class="hero-cta"> 
             <span class="preview-link">
               <a class="btn primary" href="wallet.html">Try the Demo</a>
               <div class="preview-card" role="region" aria-label="Preview: Wallet">
