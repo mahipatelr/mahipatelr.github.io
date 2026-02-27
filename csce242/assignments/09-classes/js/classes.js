@@ -26,9 +26,7 @@
         else el.setAttribute(k, attrs[k]);
       });
     }
-    if (children) {
-      children.forEach(function (c) { el.appendChild(c); });
-    }
+    if (children) children.forEach(function (c) { el.appendChild(c); });
     return el;
   }
 
@@ -51,19 +49,13 @@
     });
 
     var header = createEl('div', { class: 'song-card-header' });
-
     var titleEl = createEl('h3', { class: 'song-card-title', text: this.title });
     var artistEl = createEl('p', { class: 'song-card-artist', text: 'By ' + this.artist });
-
     header.appendChild(titleEl);
     header.appendChild(artistEl);
 
     var imgWrap = createEl('div', { class: 'song-card-image-wrap' });
-    var img = createEl('img', {
-      class: 'song-card-image',
-      src: this.coverFile,
-      alt: this.title + ' cover art'
-    });
+    var img = createEl('img', { class: 'song-card-image', src: this.coverFile, alt: this.title + ' cover art' });
 
     img.onerror = function () {
       var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>" +
@@ -86,7 +78,6 @@
     }
 
     section.addEventListener('click', openHandler);
-
     section.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
         e.preventDefault();
@@ -233,7 +224,6 @@
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-
     var songs = [
       new Song({
         title: 'Two-Headed Boy',
