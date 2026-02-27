@@ -1,39 +1,34 @@
 :root {
-    --bg: #bde0fe;
+    --main-background: #bde0fe;
     --modal-blue: #b7c7db;
-    --accent: #3f66b3;
-    --accent-plain: #05668d;
-    --text: #2f3e46;
-    --orange: #e29578;
-    --card-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
-}
-
-
-/* ===============================
-   Base
-================================ */
-
-* {
-    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--main-background);
+    color: #2f3e46;
 }
-
-
-/* ===============================
-   Layout
-================================ */
 
 #content {
     width: 92%;
     max-width: 1200px;
     margin: 2rem auto;
     padding-bottom: 2rem;
+}
+
+h1 {
+    margin: 0 0 .25rem 0;
+    text-align: center;
+    font-weight: 500;
+    color: #05668d;
+}
+
+h3 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-weight: 400;
+    color: #e29578;
 }
 
 .columns {
@@ -44,38 +39,16 @@ body {
     align-items: flex-start;
 }
 
-
-/* ===============================
-   Headings
-================================ */
-
-h1 {
-    margin: 0 0 0.25rem 0;
-    text-align: center;
-    font-weight: 500;
-    color: var(--accent-plain);
-}
-
-h3 {
-    margin: 0 0 1rem 0;
-    text-align: center;
-    font-weight: 400;
-    color: var(--orange);
-}
-
-
-/* ===============================
-   Song Cards
-================================ */
+/* Cards */
 
 .song-card {
     width: 92%;
     max-width: 420px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform .15s ease, box-shadow .15s ease;
 }
 
 @media (min-width: 768px) {
@@ -87,22 +60,13 @@ h3 {
 
 .song-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16);
 }
-
-.song-card:focus {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
-    outline: none;
-}
-
-
-/* Card Header */
 
 .song-card-header {
-    padding: 1rem 0.6rem;
+    padding: 1rem .6rem;
     text-align: center;
-    background: var(--accent);
+    background: #3f66b3;
     color: white;
 }
 
@@ -113,30 +77,17 @@ h3 {
 }
 
 .song-card-artist {
-    margin: 0.25rem 0 0 0;
-    font-size: 0.82rem;
-}
-
-
-/* Card Image */
-
-.song-card-image-wrap {
-    width: 100%;
-    background: #ddd;
-    overflow: hidden;
+    margin: .25rem 0 0 0;
+    font-size: .82rem;
 }
 
 .song-card-image {
-    display: block;
     width: 100%;
     height: 160px;
     object-fit: cover;
 }
 
-
-/* ===============================
-   Modal (W3 Override)
-================================ */
+/* Modal */
 
 .w3-modal {
     padding-top: 60px;
@@ -147,18 +98,10 @@ h3 {
     border-radius: 12px;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0.25rem 0.5rem;
-}
-
 .modal-body {
     display: flex;
     gap: 2rem;
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
-    align-items: flex-start;
+    padding: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -169,15 +112,10 @@ h3 {
 
 .modal-video iframe {
     width: 100%;
-    height: 380px;
-    border-radius: 8px;
+    height: 360px;
     border: 0;
+    border-radius: 8px;
 }
-
-
-/* ===============================
-   Modal Right Column
-================================ */
 
 .song-popup-info {
     flex: 1;
@@ -186,113 +124,37 @@ h3 {
 }
 
 .song-popup-info h3 {
-    margin: 0 0 0.8rem 0;
+    margin-top: 0;
     font-size: 1.6rem;
-    font-weight: 600;
     text-align: left;
 }
 
 #modal-artist {
-    font-size: 1.15rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
 }
 
 #modal-album {
-    font-size: 1.03rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: .5rem;
 }
 
 #modal-genre {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: .95rem;
 }
 
-
-/* ===============================
-   Thumbnail / Play Button
-================================ */
-
-.thumb-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.thumb-box {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    background: #000 center/cover no-repeat;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(25, 30, 25, 0.08);
-}
-
-.play-overlay {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    border: none;
-    cursor: pointer;
-}
-
-
-/* Fallback */
-
-.thumb-no {
-    padding: 1rem;
-    text-align: center;
-    background: #000;
-    color: white;
-    border-radius: 6px;
-}
-
-
-/* ===============================
-   Footer
-================================ */
+/* Footer */
 
 .site-footer {
     text-align: center;
     margin: 3rem 0 2rem 0;
-    font-size: 0.85rem;
-    color: var(--orange);
+    font-size: .85rem;
+    color: #e29578;
     font-weight: 500;
 }
-
-
-/* ===============================
-   Responsive
-================================ */
 
 @media (max-width: 768px) {
     .modal-body {
         flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .modal-video iframe {
-        height: 260px;
-    }
-
-    .song-popup-info h3 {
-        font-size: 1.4rem;
-    }
-
-    .song-card-image {
-        height: 180px;
     }
 }
