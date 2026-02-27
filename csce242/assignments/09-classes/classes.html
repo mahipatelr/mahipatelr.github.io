@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Classes - Songs</title>
+
+  <!-- W3CSS (required) -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Your Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main id="content">
+    <h1>Classes</h1>
+    <h3>Music Time</h3>
+    <div id="dogs" class="columns"></div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    @mahipatelr.com
+  </footer>
+
+  <!-- W3 Modal -->
+  <div id="songModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4 modal-blue">
+
+      <div class="w3-container modal-header">
+        <span id="modal-close"
+              class="w3-button w3-display-topright"
+              style="font-size:20px;">
+          &times;
+        </span>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- LEFT: YouTube Player -->
+        <div id="modal-media" class="modal-video"></div>
+
+        <!-- RIGHT: Song Info -->
+        <div class="song-popup-info">
+          <h3 id="modal-title"></h3>
+          <p id="modal-artist"></p>
+          <p id="modal-album"></p>
+          <p id="modal-genre"></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/classes.js"></script>
+
+</body>
+</html>
