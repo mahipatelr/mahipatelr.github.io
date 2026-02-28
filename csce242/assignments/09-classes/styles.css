@@ -1,160 +1,190 @@
-:root {
-    --main-background: #bde0fe;
-    --modal-blue: #b7c7db;
-}
+:root { --main-background: #bde0fe; --accent:#3f66b3; --accent2:#f9a77a; }
 
+* { box-sizing: border-box; }
 body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--main-background);
-    color: #2f3e46;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--main-background);
+  color: darkslategray;
 }
 
 #content {
-    width: 92%;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding-bottom: 2rem;
+  width: 92%;
+  max-width: 1200px;
+  margin: 2.2rem auto;
+  padding-bottom: 2rem;
 }
 
 h1 {
-    margin: 0 0 .25rem 0;
-    text-align: center;
-    font-weight: 500;
-    color: #05668d;
+  color: #05668d;
+  text-align: center;
+  margin: 0 0 0.25rem 0;
+  font-weight: 400;
 }
 
 h3 {
-    margin: 0 0 1rem 0;
-    text-align: center;
-    font-weight: 400;
-    color: #e29578;
+  color: #e29578;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
 }
 
+/* Gallery grid */
 .columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* Cards */
-
+/* Card */
 .song-card {
-    width: 92%;
-    max-width: 420px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
-    cursor: pointer;
-    transition: transform .15s ease, box-shadow .15s ease;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  width: 92%;
+  max-width: 420px;
+  outline: none;
 }
 
 @media (min-width: 768px) {
-    .song-card {
-        width: 22%;
-        max-width: 260px;
-    }
+  .song-card { width: 22%; max-width: 260px; }
 }
 
-.song-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.16);
-}
+.song-card:focus { transform: translateY(-6px); box-shadow: 0 10px 28px rgba(0,0,0,0.16); }
 
 .song-card-header {
-    padding: 1rem .6rem;
-    text-align: center;
-    background: #3f66b3;
-    color: white;
+  background: var(--accent);
+  color: white;
+  padding: 0.95rem 0.6rem;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
 }
 
 .song-card-title {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 600;
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--accent2);
 }
 
 .song-card-artist {
-    margin: .25rem 0 0 0;
-    font-size: .82rem;
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: white;
+}
+
+.song-card-image-wrap {
+  width: 100%;
+  background: #ddd;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
 }
 
 .song-card-image {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 220px; /* reduced size so 4 fit a row */
+  object-fit: cover;
 }
+
+.song-card:hover { transform: translateY(-8px); box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
 
 /* Modal */
-
-.w3-modal {
-    padding-top: 60px;
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
 }
 
-.modal-blue {
-    background: var(--modal-blue) !important;
-    border-radius: 12px;
+.modal-content {
+  background: white;
+  width: 94%;
+  max-width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
 }
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: #f6f6f6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.modal-header h3 { margin: 0; color: #05668d; }
 
 .modal-body {
-    display: flex;
-    gap: 2rem;
-    padding: 1.5rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
-.modal-video {
-    flex: 2;
-    min-width: 320px;
+.modal-video { flex: 2; min-width: 320px; }
+.song-popup-info { flex: 1; min-width: 240px; padding: 0.25rem 0; color: darkslategray; }
+
+/* thumbnail box */
+.thumb-wrapper { width: 100%; display: flex; justify-content: center; }
+.thumb-box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000 center/cover no-repeat;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(25,30,25,0.08);
+}
+.play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
 }
 
-.modal-video iframe {
-    width: 100%;
-    height: 360px;
-    border: 0;
-    border-radius: 8px;
-}
+/* controls (subtle watch link) */
+.modal-controls { margin-top: 0.6rem; display:flex; gap: 0.6rem; align-items:center; }
+.watch-link { display: inline-block; color: #05668d; text-decoration: underline; font-weight: 600; font-size: 0.95rem; }
 
-.song-popup-info {
-    flex: 1;
-    min-width: 260px;
-    color: #1d3557;
-}
+/* fallback */
+.thumb-no { background: #000; color: #fff; padding: 1rem; border-radius: 6px; text-align: center; }
+#modal-close { background: transparent; border: none; font-size: 1.2rem; color: #666; cursor: pointer; }
 
-.song-popup-info h3 {
-    margin-top: 0;
-    font-size: 1.6rem;
-    text-align: left;
-}
-
-#modal-artist {
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
-}
-
-#modal-album {
-    font-size: 1rem;
-    margin-bottom: .5rem;
-}
-
-#modal-genre {
-    font-size: .95rem;
+/* responsive tweaks */
+@media (max-width: 520px) {
+  .song-card-image { height: 180px; }
 }
 
 /* Footer */
-
-.site-footer {
-    text-align: center;
-    margin: 3rem 0 2rem 0;
-    font-size: .85rem;
-    color: #e29578;
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .modal-body {
-        flex-direction: column;
-    }
+#main-footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #05668d;
 }
