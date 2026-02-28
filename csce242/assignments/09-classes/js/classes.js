@@ -14,6 +14,48 @@ function extractYouTubeId(url) {
   }
 }
 
+function loadThumbnailToBackground(thumbBoxElement, videoId) {
+  if (!videoId) {
+    thumbBoxElement.style.background = '#000';
+    return;
+  }
+
+  const variants = [
+    'maxresdefault',
+    'sddefault',
+    'hqdefault',
+    'mqdefault',
+    'default'
+  ];
+
+  let i = 0;
+
+  function tryNext() {
+    if (i >= variants.length) {
+      thumbBoxElement.style.background = '#000';
+      return;
+    }
+
+    const name = variants[i++];
+    const url = `https://img.youtube.com/vi/${videoId}/${name}.jpg`;
+    const loader = new Image();
+
+    loader.onload = function () {
+      thumbBoxElement.style.backgroundImage = `url("${url}")`;
+      thumbBoxElement.style.backgroundSize = 'cover';
+      thumbBoxElement.style.backgroundPosition = 'center';
+    };
+
+    loader.onerror = function () {
+      tryNext();
+    };
+
+    loader.src = url;
+  }
+
+  tryNext();
+}
+
 class Song {
   constructor({ title, artist, album, year, genre, coverFile, embedUrl }) {
     this.title = title;
@@ -93,7 +135,8 @@ function openSongModal(song) {
 
   const thumb = document.createElement('div');
   thumb.className = 'thumb-box';
-  thumb.style.backgroundImage = `url("https://img.youtube.com/vi/${videoId}/hqdefault.jpg")`;
+
+  loadThumbnailToBackground(thumb, videoId);
 
   const overlay = document.createElement('div');
   overlay.className = 'play-overlay';
@@ -139,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1957,
       genre: "Rock & Roll",
       coverFile: "../../images/jailhouse.png",
-      embedUrl: "https://www.youtube.com/embed/ru1t8yQIn9c"
+      embedUrl: "https://youtu.be/gj0Rz-uP4Mk?si=t2j0i8xViMgZVY3T"
     }),
     new Song({
       title: "So What",
@@ -157,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1974,
       genre: "Country",
       coverFile: "../../images/jolene.png",
-      embedUrl: "https://www.youtube.com/embed/sXZ1SClv2RQ"
+      embedUrl: "https://youtu.be/Ixrje2rXLMA?si=9wqCDtWZXKg0_oW2"
     })
   ];
 
