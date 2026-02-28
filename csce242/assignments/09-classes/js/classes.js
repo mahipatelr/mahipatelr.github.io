@@ -20,14 +20,7 @@ function loadThumbnailToBackground(thumbBoxElement, videoId) {
     return;
   }
 
-  const variants = [
-    'maxresdefault',
-    'sddefault',
-    'hqdefault',
-    'mqdefault',
-    'default'
-  ];
-
+  const variants = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
   let i = 0;
 
   function tryNext() {
@@ -35,21 +28,17 @@ function loadThumbnailToBackground(thumbBoxElement, videoId) {
       thumbBoxElement.style.background = '#000';
       return;
     }
-
     const name = variants[i++];
     const url = `https://img.youtube.com/vi/${videoId}/${name}.jpg`;
     const loader = new Image();
-
     loader.onload = function () {
       thumbBoxElement.style.backgroundImage = `url("${url}")`;
       thumbBoxElement.style.backgroundSize = 'cover';
       thumbBoxElement.style.backgroundPosition = 'center';
     };
-
     loader.onerror = function () {
       tryNext();
     };
-
     loader.src = url;
   }
 
@@ -96,8 +85,7 @@ class Song {
     img.onerror = function () {
       const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
         <rect width='100%' height='100%' fill='#ddd'/>
-        <text x='50%' y='50%' dominant-baseline='middle'
-        text-anchor='middle' fill='#666' font-size='20'>No image</text>
+        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#666' font-size='20'>No image</text>
       </svg>`;
       this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
       this.onerror = null;
@@ -173,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1998,
       genre: "Folk / Indie",
       coverFile: "../../images/two-headed.png",
-      embedUrl: "https://www.youtube.com/embed/9yAxIdkF2Qo"
+      embedUrl: "https://www.youtube.com/embed/rY0WxgSXdEE"
     }),
     new Song({
       title: "Jailhouse Rock",
@@ -200,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1974,
       genre: "Country",
       coverFile: "../../images/jolene.png",
-      embedUrl: "https://www.youtube.com/embed/5m71Jbi7NkU"
+      embedUrl: "https://www.youtube.com/embed/sXZ1SClv2RQ"
     })
   ];
 
