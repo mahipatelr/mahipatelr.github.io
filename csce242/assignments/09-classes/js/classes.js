@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1957,
       genre: "Rock & Roll",
       coverFile: "../../images/jailhouse.png",
-      embedUrl: "https://youtu.be/gj0Rz-uP4Mk?si=t2j0i8xViMgZVY3T"
+      embedUrl: "https://www.youtube.com/embed/gj0Rz-uP4Mk"
     }),
     new Song({
       title: "So What",
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1974,
       genre: "Country",
       coverFile: "../../images/jolene.png",
-      embedUrl: "https://youtu.be/Ixrje2rXLMA?si=9wqCDtWZXKg0_oW2"
+      embedUrl: "https://www.youtube.com/embed/5m71Jbi7NkU"
     })
   ];
 
