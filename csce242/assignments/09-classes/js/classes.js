@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1998,
       genre: "Folk / Indie",
       coverFile: "../../images/two-headed.png",
-      embedUrl: "https://www.youtube.com/embed/rY0WxgSXdEE"
+      embedUrl: "https://www.youtube.com/embed/9yAxIdkF2Qo"
     }),
     new Song({
       title: "Jailhouse Rock",
