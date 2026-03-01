@@ -1,61 +1,89 @@
-:root {
-  --bg-deeper:   #041022;
-  --bg-dark:     #06142b;
-  --bg-bottom:   #08204a;
+/* ==========================================================================
+   TrustPay — styles.css (updated: help items line up + super light blue cards)
+   Replace your existing styles.css with this file.
+   ========================================================================== */
 
-  --bg-section:  #0b2748;
-  --bg-card:     #0e3358;
+/* ---------------------------
+   Theme variables
+   --------------------------- */
+:root {
+  --bg-deeper:    #041022;
+  --bg-dark:      #06142b;
+  --bg-bottom:    #08204a;
+
+  --bg-section:   #0b2748;
+  --bg-card:      #0e3358;
 
   --blue-primary:  #2b8bff;
   --blue-bright:   #4da3ff;
   --blue-electric: #6fc3ff;
   --blue-soft:     #9ed8ff;
 
-  --text-white:  #ffffff;
-  --text-muted:  #c7d4ea;
+  --text-white:   #ffffff;
+  --text-muted:   #c7d4ea;
 
-  --card-border: rgba(255,255,255,0.06);
+  --card-border:  rgba(255,255,255,0.06);
 
-  --radius: 14px;
-  --max-width: 1200px;
+  --radius:       14px;
+  --max-width:    1200px;
+
+  /* POP colors for light cards */
+  --card-pop-bg-1: rgba(77,131,200,0.14);   /* lesson / gallery cards */
+  --card-pop-bg-2: rgba(19,55,92,0.06);      /* subtle gradient */
+  --card-pop-border: rgba(77,131,200,0.12);
 }
 
-
-* {
+/* ---------------------------
+   Base / Reset
+   --------------------------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
-}
-
-body {
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
+  padding: 0;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--text-white);
-
   background: linear-gradient(
     180deg,
     var(--bg-deeper) 0%,
     var(--bg-dark) 55%,
     var(--bg-bottom) 100%
   );
+  color: var(--text-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-  flex: 1; 
+  min-height: calc(100vh - 160px);
+  display: block;
 }
 
+/* Container — consistent side padding for small screens */
 .container {
-  width: min(var(--max-width), 96%);
+  width: min(var(--max-width), calc(100% - 48px));
   margin: 0 auto;
 }
 
+/* Default anchor style — override browser purple links */
+a {
+  color: var(--blue-electric);
+  text-decoration: none;
+}
 
+a:focus,
+a:hover {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ---------------------------
+   Header & Navigation
+   --------------------------- */
 .site-header {
   padding: 16px 0;
   position: sticky;
@@ -75,6 +103,7 @@ main {
   gap: 12px;
 }
 
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -83,6 +112,7 @@ main {
 
 .logo {
   width: 48px;
+  height: auto;
   display: block;
 }
 
@@ -91,40 +121,40 @@ main {
   font-weight: 800;
 }
 
-/* nav container */
+/* Navigation layout */
 .main-nav {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* desktop menu  */
+/* Desktop menu */
 .desktop-menu {
   display: flex;
   gap: 26px;
   font-weight: 700;
 }
 
-/* nav items */
+/* Nav items */
 .nav-item {
   color: var(--text-muted);
-  text-decoration: none;
   font-size: 15px;
   padding: 8px;
   border-radius: 8px;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-item:focus {
   color: var(--blue-bright);
   background: rgba(255,255,255,0.02);
 }
 
-/* highlight for Home */
+/* Active / highlighted page */
 .home {
   color: var(--blue-electric);
 }
 
-/* hamburger (hidden on desktop) */
+/* Hamburger (mobile) */
 .hamburger {
   display: none;
   background: none;
@@ -139,25 +169,29 @@ main {
   height: 3px;
   background: white;
   border-radius: 2px;
-  transition: 0.25s;
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .hamburger.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* mobile menu  */
+/* Mobile menu — hidden by default; slides in on small screens */
 .mobile-menu {
   display: none;
 }
 
-
+/* ---------------------------
+   Hero
+   --------------------------- */
 .hero {
   padding: 92px 0 44px;
 }
@@ -183,7 +217,7 @@ main {
 .accent {
   color: var(--blue-electric);
   font-weight: 900;
-  text-shadow: 0 0 16px rgba(111,195,255,0.6);
+  text-shadow: 0 0 16px rgba(111,195,255,0.18);
 }
 
 .lead {
@@ -203,8 +237,9 @@ main {
   padding: 12px 22px;
   border-radius: var(--radius);
   font-weight: 800;
-  text-decoration: none;
   display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn.primary {
@@ -213,7 +248,8 @@ main {
   box-shadow: 0 10px 30px rgba(43,139,255,0.18);
 }
 
-.btn.primary:hover {
+.btn.primary:hover,
+.btn.primary:focus {
   transform: translateY(-3px);
 }
 
@@ -223,15 +259,19 @@ main {
   color: var(--blue-soft);
 }
 
+/* Hero media */
 .hero-media img {
   width: 480px;
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 18px 44px rgba(6,18,38,0.6);
   display: block;
 }
 
-
+/* ---------------------------
+   Features / Grid
+   --------------------------- */
 .features {
   background: var(--bg-section);
   padding: 64px 0;
@@ -270,7 +310,8 @@ main {
   justify-content: flex-start;
 }
 
-.feature:hover {
+.feature:hover,
+.feature:focus-within {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(3,10,30,0.45);
 }
@@ -295,7 +336,9 @@ main {
   font-size: 15px;
 }
 
-
+/* ---------------------------
+   CTA Banner
+   --------------------------- */
 .cta-banner {
   background: linear-gradient(180deg, var(--bg-section), var(--bg-card));
   padding: 70px 0;
@@ -347,7 +390,9 @@ main {
   display: block;
 }
 
-
+/* ---------------------------
+   Wallet
+   --------------------------- */
 .wallet-hero {
   padding: 48px 0 10px;
   background: transparent;
@@ -369,7 +414,6 @@ main {
   margin: 0 0 18px;
   text-align: left;
 }
-
 
 .wallet-cta-row-centered {
   display: flex;
@@ -393,19 +437,14 @@ main {
   box-shadow: 0 12px 36px rgba(43,139,255,0.16);
 }
 
+/* Balance text */
 .wallet-large-balance-centered {
   font-size: 44px;
   font-weight: 900;
   color: var(--text-white);
 }
 
-
-.wallet-section {
-  margin-top: 50px;
-  padding-top: 20px;
-}
-
-
+/* Chart card */
 .chart-card {
   position: relative;
   max-width: 900px;
@@ -435,20 +474,29 @@ main {
   border-radius: 8px;
 }
 
+/* Chart image size is responsive to avoid overflow issues */
 .chart-img {
-  width: 75%;
+  width: 100%;
+  max-width: 820px;
+  height: auto;
   display: block;
-  margin: 30px auto;
+  margin: 30px auto 10px;
   border-radius: 12px;
 }
 
+/* Move balance overlay slightly lower so it doesn't overlap the chart top */
 .chart-balance-overlay {
   position: absolute;
   left: 50%;
-  top: 38%;
-  transform: translate(-50%, -50%);
+  top: 44%;
+  transform: translate(-50%, -10%);
   font-size: 28px;
   font-weight: 900;
+  text-align: center;
+  padding: 6px 12px;
+  background: rgba(2,8,20,0.28);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
 .chart-note {
@@ -457,7 +505,7 @@ main {
   font-size: 13px;
 }
 
-
+/* Spending breakdown */
 .spend-block {
   margin-top: 30px;
   display: grid;
@@ -466,14 +514,8 @@ main {
   align-items: center;
 }
 
-.donut-wrap {
-  width: 100%;
-}
-
-.donut-img {
-  width: 100%;
-  border-radius: 14px;
-}
+.donut-wrap { width: 100%; }
+.donut-img { width: 100%; border-radius: 14px; }
 
 .spend-legend {
   list-style: none;
@@ -490,76 +532,438 @@ main {
   font-weight: 700;
 }
 
-.legend-value {
-  color: var(--blue-bright);
+.legend-value { color: var(--blue-bright); }
+
+/* ---------------------------
+   Transactions table
+   --------------------------- */
+.transactions-hero {
+  padding: 70px 0 80px;
+  background: var(--bg-section);
 }
 
+.transactions-title {
+  font-size: 42px;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
 
+.transactions-sub {
+  color: var(--blue-electric);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.transactions-wrapper { max-width: 1200px; margin: 0 auto; }
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.transactions-table thead th {
+  text-align: left;
+  padding: 20px 12px;
+  font-weight: 800;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.transactions-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.transactions-table td {
+  padding: 18px 12px;
+  color: var(--text-white);
+}
+
+.amount { text-align: right; font-weight: 800; }
+.negative { color: #ff9aa2; }
+.positive { color: #8ff2a6; }
+
+/* ---------------------------
+   Learn page (cards) - SUPER LIGHT by default now
+   --------------------------- */
+.learn-hero { padding: 84px 0 20px; background: transparent; }
+
+.learn-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.learn-title { font-size: 36px; font-weight: 900; margin: 0 0 8px; color: var(--text-white); }
+.learn-sub { color: var(--blue-electric); margin-bottom: 36px; font-size: 16px; }
+
+.center-row { display: flex; justify-content: center; width: 100%; }
+
+/* Move the lesson grid further down for extra breathing room */
+.lesson-grid {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  max-width: 960px;
+  width: 100%;
+  margin: 40px 0 36px; /* <-- increased top margin to push cards down */
+}
+
+/* ========================
+   <--- CHANGE: make gallery cards SUPER LIGHT BLUE (POP)
+   ======================== */
+
+/* SUPER LIGHT / POP gallery cards */
+.lesson-card {
+  width: 280px;
+  /* stronger, super-light blue background for higher pop */
+  background: linear-gradient(180deg,
+              rgba(111,195,255,0.24),   /* light top blue */
+              rgba(19,55,92,0.02)       /* subtle bottom tone for depth */
+            );
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  /* stronger border to match the brighter background */
+  border: 1px solid rgba(111,195,255,0.20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 36px rgba(3,10,30,0.20);
+}
+
+.lesson-card:hover,
+.lesson-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 56px rgba(3,10,30,0.36);
+  cursor: pointer;
+}
+
+.lesson-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+}
+
+.lesson-card h4 { font-weight: 900; margin: 6px 0 4px; color: var(--text-white); }
+.lesson-card p { color: var(--text-muted); font-size: 14px; margin: 0 0 12px; }
+
+/* Check columns & progress */
+.check-columns { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; max-width: 960px; margin: 120px auto 60px; }
+ /* ^^^ <-- CHANGE: pushed this much lower (120px top margin) so the second section sits farther down */
+
+.check-card {
+  width: 360px;
+  background: linear-gradient(180deg, var(--card-pop-bg-1), var(--card-pop-bg-2)); /* lighter too */
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--card-pop-border);
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(3,10,30,0.18);
+}
+
+.check-card h3 { font-weight: 900; margin-bottom: 14px; font-size: 20px; color: var(--text-white); }
+.check-list { list-style: none; padding: 0; margin: 0 0 18px; color: var(--text-muted); font-weight: 800; }
+.check-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.check-list .dot { width: 12px; height: 12px; background: var(--blue-bright); border-radius: 50%; box-shadow: 0 0 8px rgba(77,163,255,0.18); flex-shrink: 0; }
+
+/* Progress tracker */
+.progress-section {
+  margin-top: 86px;
+  padding: 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.03);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-list { display: flex; flex-direction: column; gap: 28px; }
+
+.progress-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.small-badge { width: 68px; height: 68px; border-radius: 10px; flex-shrink: 0; object-fit: cover; }
+.progress-body { display: flex; flex-direction: column; justify-content: center; }
+
+.progress-info {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-top: 8px;
+  color: var(--text-white);
+}
+
+.progress-sub { color: var(--text-muted); font-size: 14px; margin-top: 8px; }
+
+/* ---------------------------
+   Support page
+   --------------------------- */
+.support-hero {
+  padding: 68px 0 20px;
+  background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
+}
+
+.support-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 20px 80px; }
+
+.support-title { font-size: 36px; font-weight: 900; margin: 0 0 6px; color: var(--text-white); }
+.support-sub { color: var(--text-muted); margin: 0 0 20px; }
+
+/* Search box */
+.support-search {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 24px;
+  max-width: 880px;
+}
+
+.support-search input[type="search"] {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-white);
+  font-size: 15px;
+}
+
+.support-search button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Contact card row — now POP with lighter blue background */
+.contact-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.contact-card {
+  flex: 1;
+  min-width: 200px;
+  background: linear-gradient(180deg, var(--card-pop-bg-1), var(--card-pop-bg-2));
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--card-pop-border);
+  box-shadow: 0 10px 30px rgba(3,10,30,0.18);
+}
+
+.contact-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: white;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.contact-body { flex: 1; display:flex; flex-direction:column; justify-content:center; }
+.contact-title { font-weight: 900; margin: 0 0 6px; color: var(--text-white); }
+.contact-sub { margin: 0; color: var(--text-muted); font-size: 13px; }
+
+/* Help list — expanded to align with contact cards */
+.help-list {
+  margin-top: 8px;
+  max-width: 1100px;             /* match the support-wrapper width so edges line up */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  padding: 0;                    /* use internal padding on items */
+}
+
+/* Make help items fill and let the left column expand so text lines reach the right edge */
+.help-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;  /* increase horizontal padding to match contact-card visual alignment */
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  color: var(--text-white);
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.help-item:last-child { border-bottom: none; }
+
+.help-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex: 1;
+  min-width: 0; /* allow text to truncate/flow properly */
+}
+
+.help-title { font-weight: 800; font-size: 16px; white-space: normal; }
+.help-subtext { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+
+/* preview on hover */
+.help-item .preview {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 28px;
+  width: 360px;
+  background: linear-gradient(180deg, rgba(6,18,38,0.98), rgba(10,28,58,0.98));
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 20px 50px rgba(2,8,20,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  z-index: 190;
+  color: var(--text-white);
+  font-size: 14px;
+  text-align: left;
+}
+
+.help-item:focus-within .preview,
+.help-item:hover .preview {
+  display: block;
+}
+
+/* adjust preview on tiny screens */
+@media (max-width: 640px) {
+  .help-item .preview {
+    position: static;
+    width: auto;
+    margin-top: 10px;
+  }
+  .help-item { flex-direction: column; align-items: flex-start; padding: 14px; }
+}
+
+/* Chat CTA */
+.chat-cta {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  z-index: 220;
+  background: linear-gradient(90deg,var(--blue-primary),var(--blue-bright));
+  color: #fff;
+  padding: 14px 38px;
+  border-radius: 10px;
+  font-weight: 900;
+  box-shadow: 0 10px 36px rgba(43,139,255,0.18);
+  text-decoration: none;
+}
+
+/* ---------------------------
+   Footer
+   --------------------------- */
 .site-footer {
   text-align: center;
   padding: 40px 0;
   color: var(--text-muted);
 }
 
-
+/* ---------------------------
+   Responsive Breakpoints
+   --------------------------- */
 @media (max-width: 900px) {
 
-  
-  .desktop-menu {
-    display: none;
-  }
+  /* Nav */
+  .desktop-menu { display: none; }
+  .hamburger { display: flex; }
 
-  .hamburger {
-    display: flex;
-  }
-
-  
   .mobile-menu {
     display: flex;
     position: fixed;
     top: 0;
-    right: -280px; 
-    width: 260px;
+    right: -300px;
+    width: 280px;
     height: 100vh;
-
-    background: linear-gradient(180deg, #061b33, #04102a);
+    background: linear-gradient(180deg,#061b33,#04102a);
     flex-direction: column;
-    padding: 88px 18px;
+    padding: 88px 16px;
     gap: 20px;
-
     transition: right 0.28s cubic-bezier(.2,.9,.2,1);
     box-shadow: -10px 0 34px rgba(0,0,0,0.6);
     z-index: 90;
   }
 
-  .mobile-menu.open {
-    right: 0;
-  }
+  .mobile-menu.open { right: 0; }
 
-  
-  .cta-pill-long {
-    width: 100%;
-    min-width: unset;
-    padding: 12px 18px;
-  }
+  /* Hero adjustments */
+  .hero { padding: 56px 0 32px; }
+  .hero h1 { font-size: 30px; }
 
-  .wallet-large-balance-centered {
-    font-size: 32px;
-  }
+  /* Wallet */
+  .cta-pill-long { width: 100%; min-width: unset; padding: 12px 18px; }
+  .wallet-large-balance-centered { font-size: 32px; }
 
-  
-  .spend-block {
-    grid-template-columns: 1fr;
-  }
+  /* Spending layout stacks */
+  .spend-block { grid-template-columns: 1fr; }
+  .spend-legend { text-align: left; }
 
-  .spend-legend {
-    text-align: left;
-  }
+  /* Chart overlay sizing */
+  .chart-balance-overlay { font-size: 20px; top: 48%; transform: translate(-50%, -10%); }
+
+  /* Support search stacks vertically */
+  .support-search { flex-direction: column; align-items: stretch; }
+  .support-search button { width: 100%; }
+
+  /* Chat CTA reposition */
+  .chat-cta { left: 12px; right: 12px; transform: none; bottom: 14px; }
+
+  /* Help list spacing on small screens: full width */
+  .help-list { padding: 0 12px; max-width: 100%; }
+  .help-item { padding: 14px; }
 }
 
+@media (max-width: 420px) {
+
+  .container { width: calc(100% - 24px); }
+
+  .hero h1 { font-size: 28px; }
+  .hero-media img { width: 100%; height: auto; }
+
+  .lesson-card { width: 100%; max-width: 420px; }
+  .contact-row { flex-direction: column; }
+  .chart-img { margin: 20px auto; }
+
+  .progress-info { font-size: 20px; }
+  .small-badge { width: 56px; height: 56px; }
+}
+
+/* Slightly larger container on very large screens */
 @media (min-width: 1500px) {
   :root { --max-width: 1350px; }
 }
+
 
 
 
