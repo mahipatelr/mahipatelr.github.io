@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1998,
       genre: "Folk / Indie",
       coverFile: "../../images/two-headed.png",
-      embedUrl: "https://www.youtube.com/embed/rY0WxgSXdEE"
+      embedUrl: "https://www.youtube.com/embed/Fg32tzKmTv4?si=qI-h1IagI4orni"
     }),
     new Song({
       title: "Jailhouse Rock",
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year: 1974,
       genre: "Country",
       coverFile: "../../images/jolene.png",
-      embedUrl: "https://www.youtube.com/embed/sXZ1SClv2RQ"
+      embedUrl: "https://www.youtube.com/embed/Ixrje2rXLMA?si=AvcNjBh6sgpz9Ou1"
     })
   ];
 
