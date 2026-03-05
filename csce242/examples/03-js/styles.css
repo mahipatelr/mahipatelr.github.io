@@ -1,11 +1,18 @@
 /* Main Structure */
 :root {
     --main-background:#bde0fe;
+    --donation:0%;
 }
 
 body {
     font-family:Arial, Helvetica, sans-serif;
     background:var(--main-background);
+    color:darkslategray;
+}
+
+#main-content {
+    width:80%;
+    margin:auto;
 }
 
 #main-header {
@@ -25,21 +32,6 @@ img {
     position:relative;
 }
 
-.arrow {
-    font-size:1.5em;
-    color:white;
-    position:absolute;
-    top:32%;
-}
-
-#prev {
-    left:5%;
-}
-
-#next {
-    right:5%;
-}
-
 #slide-desc {
     position:absolute;
     bottom:5%;
@@ -47,6 +39,10 @@ img {
     background:rgba(255,255,255, 0.8);
     padding:5px;
     max-width:40%;
+}
+
+#movie {
+    width:100%;
 }
 
 /* Gallery */
@@ -73,6 +69,43 @@ button {
 
 button:disabled {
     background:gray;
+}
+
+/* tables */
+table {
+    border-collapse: collapse;
+}
+table th, table td {
+    padding:5px;
+    border:1px solid darkslategray;
+}
+
+table th {
+    background-color: #05668d;
+    color:white;
+}
+
+/* Slideshow */
+#slideshow {
+    position:relative;
+}
+
+.arrow {
+    display:block;
+    font-size:5em;
+    text-decoration: none;
+    font-weight: 600;
+    position:absolute;
+    top:30%;
+    color:white;
+}
+
+#arrow-prev{
+    left:5%;
+}
+
+#arrow-next {
+    right:5%;
 }
 
 /* Navigation */
@@ -109,8 +142,14 @@ nav a {
 
 /* Date */
 #p-date {
+    position:absolute;
+    top:0;
     padding:10px;
     color:white;
+}
+
+.error {
+    color:#e29578;
 }
 
 /* Ball */
@@ -153,14 +192,97 @@ nav a {
     }
 }
 
+/* Classes */
+.dog {
+    background:#EDF6F9;
+    border:5px solid #E29578;
+    text-align:center;
+    margin-bottom:20px;
+    padding:10px;
+    padding-bottom:30px;
+}
+
+.dog img {
+    margin:auto;
+    display:block;
+}
+
+.dog h3 {
+    color:#E29578;
+    font-size:1.5em;
+}
+
+.dog ul {
+    text-align: left;
+    color:darkslategray;
+}
+
+.dog strong {
+    color:#E29578;
+}
+
+.dog a {
+    text-decoration: none;
+}
+
+/* Fish */
+.fish{
+    background:#EDF6F9;
+    border:5px solid #E29578;
+    text-align:center;
+    margin-bottom:20px;
+    padding:10px;
+    padding-bottom:30px;
+}
+
+.fish h3 {
+    color:#E29578;
+    font-size:1.5em;
+}
+
+.fish ul {
+    text-align: left;
+    color:darkslategray;
+}
+
+.fish strong {
+    color:#E29578;
+}
+
+/* Breweries */
+.brewery, .contact section{
+    background:#EDF6F9;
+    border:5px solid #E29578;
+    text-align:center;
+    margin-bottom:20px;
+    padding:10px;
+    padding-bottom:30px;
+}
+
+.brewery h3, .contact h3 {
+    color:#E29578;
+    font-size:1.5em;
+}
+
+.brewery ul, .contact ul {
+    text-align: left;
+    color:darkslategray;
+}
+
+.brewery strong, .contact strong {
+    color:#E29578;
+}
+
 /* Thermometer */
 #thermometer {
     width:25%;
     height:200px;
     margin-right:10%;
     border:2px solid turquoise;
-    background:linear-gradient(0deg, red 0% var(--donation-percent), white var(--donation-percent) 100%);
+    background:linear-gradient(0deg, red 0% var(--donation), white var(--donation) 100%);
 }
+
+/* Contact */
 
 /* Typography */
 #main-header h1 {
@@ -169,8 +291,17 @@ nav a {
     color:white;
 }
 
+h2 {
+    text-align:center;
+}
+
 h3 {
     color:#05668d;
+}
+
+h4 {
+    color:#00a896;
+    font-weight: 200;
 }
 
 a {
@@ -179,6 +310,10 @@ a {
 
 /* Hide */
 .hide-small {
+    display:none;
+}
+
+.hidden {
     display:none;
 }
 
@@ -246,5 +381,13 @@ a {
 
     .hide-small {
         display:flex;
+    }
+
+    #dogs, #fish-list, #breweries, .contact {
+        gap:5%;
+    }
+
+    #dogs section, #fish-list section, #breweries, .contact section {
+        flex:1;
     }
 }

@@ -1,13 +1,8 @@
-// js/script.js
-// Minimal JS: hamburger toggle + Add-to-Gallery that creates linked lesson cards.
-// No lightbox. Cards are normal <a href="..."> links so clicking navigates.
-
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
 
-    // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -20,13 +15,11 @@
       });
     }
 
-    // Gallery add behavior
     const grid = document.getElementById('lessonGrid');
     const addBtn = document.getElementById('addToGallery');
 
     if (!grid || !addBtn) return;
 
-    // helper: create preview-card element (used inside preview-link)
     function createPreviewCard() {
       const previewCard = document.createElement('div');
       previewCard.className = 'preview-card';
@@ -43,7 +36,6 @@
       return previewCard;
     }
 
-    // helper: create 'Open' preview wrapper used in each card
     function createPreviewLink(openLabel) {
       const span = document.createElement('span');
       span.className = 'preview-link';
@@ -62,7 +54,6 @@
       return span;
     }
 
-    // create a lesson card anchor (links to a page)
     function createLessonCard({ title, desc, img, href }) {
       const a = document.createElement('a');
       a.className = 'lesson-card';
@@ -90,7 +81,6 @@
       return a;
     }
 
-    // Add-to-gallery click: prompt for information and append a linked card
     addBtn.addEventListener('click', function () {
       const title = prompt('Lesson title (e.g. "Saving 101")');
       if (!title) return;
@@ -110,6 +100,5 @@
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
-    // nothing else necessary — cards are anchors so they navigate naturally
   });
 })();

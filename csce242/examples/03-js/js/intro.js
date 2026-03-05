@@ -79,17 +79,19 @@ setInterval(()=>{
 /* Donations */
 document.getElementById("btn-display-donation").onclick = () => {
     const errorP = document.getElementById("p-donation-error");
-    errorP.innerHTML = ""; //if you click the button twice
+    errorP.innerHTML = "";  //if you click the button twice
 
     const donationText = document.getElementById("txt-donation").value;
 
-    if(isNaN(donationText) || donationText <= 0){
-        errorP.innerHTML = "*Invalid amount";
+    if(isNaN(donationText) || donationText < 0){
+        errorP.innerHTML = "* Invalid amount";
         return;
     }
 
     donation = parseInt(donationText);
     const percentGoal = donation/5000 * 100;
 
-    documentgetElementById("p-donation").innerHTML = "You are "
+    document.getElementById("p-donation").innerHTML = `You've reached ${percentGoal}% of your goal.`
+
+    document.querySelector(":root").style.setProperty("--donation",percentGoal + "%");
 }

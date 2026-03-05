@@ -29,7 +29,7 @@ h3 {
   font-weight: 300;
 }
 
-/* Gallery grid */
+
 .columns {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +38,7 @@ h3 {
   align-items: flex-start;
 }
 
-/* Card */
+
 .song-card {
   background: transparent;
   border-radius: 10px;
@@ -97,7 +97,7 @@ h3 {
 
 .song-card:hover { transform: translateY(-8px); box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
 
-/* Modal */
+
 .modal {
   display: none;
   position: fixed;
@@ -139,7 +139,7 @@ h3 {
 .modal-video { flex: 2; min-width: 320px; }
 .song-popup-info { flex: 1; min-width: 240px; padding: 0.25rem 0; color: darkslategray; }
 
-/* thumbnail box */
+
 .thumb-wrapper { width: 100%; display: flex; justify-content: center; }
 .thumb-box {
   position: relative;
@@ -167,20 +167,20 @@ h3 {
   font-size: 28px;
 }
 
-/* controls (subtle watch link) */
+
 .modal-controls { margin-top: 0.6rem; display:flex; gap: 0.6rem; align-items:center; }
 .watch-link { display: inline-block; color: #05668d; text-decoration: underline; font-weight: 600; font-size: 0.95rem; }
 
-/* fallback */
+
 .thumb-no { background: #000; color: #fff; padding: 1rem; border-radius: 6px; text-align: center; }
 #modal-close { background: transparent; border: none; font-size: 1.2rem; color: #666; cursor: pointer; }
 
-/* responsive tweaks */
+
 @media (max-width: 520px) {
   .song-card-image { height: 180px; }
 }
 
-/* Footer */
+
 #main-footer {
   text-align: center;
   padding: 20px 0;
