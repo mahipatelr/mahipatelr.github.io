@@ -1,15 +1,11 @@
-// projects/part7/js/contact.js
-// Contact form handler (professor style) — uses window.onload
-
-// Replace this with your Formspree endpoint (example: "https://formspree.io/f/abcd1234")
-const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+const FORM_ENDPOINT = "https://formspree.io/f/xkoqgajd";
 
 window.onload = function () {
   const form = document.getElementById('contact-form');
   const resultEl = document.getElementById('contact-result');
-  if (!form || !resultEl) return; // nothing to do
+  if (!form || !resultEl) return;
 
-  // Helper to escape text safely for injection
+
   function escapeHtml(s) {
     if (s === null || s === undefined) return '';
     return String(s).replace(/[&<>"']/g, ch =>
@@ -20,7 +16,7 @@ window.onload = function () {
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    // HTML5 validation
+    
     if (!form.checkValidity()) {
       form.reportValidity();
       resultEl.style.color = "#ff9aa2";
@@ -28,7 +24,7 @@ window.onload = function () {
       return;
     }
 
-    // Ensure endpoint is configured
+    
     if (!FORM_ENDPOINT || FORM_ENDPOINT.includes('YOUR_FORMSPREE_ID')) {
       resultEl.style.color = "#ff9aa2";
       resultEl.textContent = "Form not configured. Replace FORM_ENDPOINT in js/contact.js with your Formspree URL.";

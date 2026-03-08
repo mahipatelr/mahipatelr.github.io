@@ -244,7 +244,7 @@ a:hover {
   display: block;
 }
 
-/* Features / Grid */
+/* Features */
 
 .features {
   background: var(--bg-section);
@@ -574,7 +574,7 @@ a:hover {
   color: #8ff2a6;
 }
 
-/* Learn page (cards) */
+/* Cards */
 
 .learn-hero {
   padding: 84px 0 20px;
@@ -584,7 +584,7 @@ a:hover {
 .learn-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 80px;
 }
 
 .learn-title {
@@ -666,7 +666,7 @@ a:hover {
   margin: 0 0 12px;
 }
 
-/* Check columns & progress */
+/* Check columns */
 
 .check-columns {
   display: flex;
@@ -774,7 +774,7 @@ a:hover {
 /* Support page */
 
 .support-hero {
-  padding: 68px 0 20px;
+  padding: 68px 0 140px;
   background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
 }
 
@@ -959,7 +959,7 @@ a:hover {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 18px;
+  bottom: 90px;
   z-index: 220;
   background: linear-gradient(90deg, var(--blue-primary), var(--blue-bright));
   color: #fff;
@@ -978,7 +978,7 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* Responsive breakpoints */
+/* Breakpoints */
 
 @media (max-width: 1100px) {
   .feature-grid {
@@ -1001,8 +1001,8 @@ a:hover {
 
 @media (max-width: 900px) {
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row-reverse;
+    align-items: center;
     gap: 8px;
   }
 
@@ -1087,8 +1087,9 @@ a:hover {
     width: 100%;
   }
 
+  /* For small screens */
   .chat-cta {
-    bottom: 22px;
+    bottom: 100px;
   }
 
   .help-list {
