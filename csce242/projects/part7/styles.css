@@ -244,7 +244,7 @@ a:hover {
   display: block;
 }
 
-/* Features */
+/* Features / Grid */
 
 .features {
   background: var(--bg-section);
@@ -574,7 +574,7 @@ a:hover {
   color: #8ff2a6;
 }
 
-/* Cards */
+/* Learn page (cards) */
 
 .learn-hero {
   padding: 84px 0 20px;
@@ -666,7 +666,7 @@ a:hover {
   margin: 0 0 12px;
 }
 
-/* Check columns */
+/* Check columns & progress */
 
 .check-columns {
   display: flex;
@@ -773,6 +773,7 @@ a:hover {
 
 /* Support page */
 
+/* <-- modified bottom padding per feedback (increase to extend blue area) */
 .support-hero {
   padding: 68px 0 140px;
   background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
@@ -955,6 +956,7 @@ a:hover {
 
 /* Chat CTA */
 
+/* <-- modified bottom so button won't overlap footer */
 .chat-cta {
   position: fixed;
   left: 50%;
@@ -978,7 +980,7 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* Breakpoints */
+/* Responsive breakpoints */
 
 @media (max-width: 1100px) {
   .feature-grid {
@@ -1000,6 +1002,7 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  /* <-- changed: make header a row-reverse so toggle/nav (hamburger) sits left and brand sits right */
   .header-inner {
     flex-direction: row-reverse;
     align-items: center;
@@ -1087,7 +1090,7 @@ a:hover {
     width: 100%;
   }
 
-  /* For small screens */
+  /* <-- adjusted so chat button sits higher on smaller screens too */
   .chat-cta {
     bottom: 100px;
   }
