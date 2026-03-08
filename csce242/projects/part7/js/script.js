@@ -102,3 +102,32 @@
 
   });
 })();
+
+
+
+const showTransactions = async () => {
+  const response = await fetch("https://mahipatelr.github.io/csce242/json/transactions.json");
+  const transactions = await response.json();
+
+  const tbody = document.getElementById("transactions-body");
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  transactions.forEach(t => {
+    const sign = t.amount < 0 ? '-' : '+';
+    const cls = t.amount < 0 ? 'negative' : 'positive';
+
+    tbody.innerHTML += `
+      <tr>
+        <td>${t.date}</td>
+        <td>${t.merchant}</td>
+        <td>${t.category}</td>
+        <td class="amount ${cls}">${sign}$${Math.abs(t.amount).toFixed(2)}</td>
+      </tr>
+    `;
+  });
+};
+
+
+window.onload = showTransactions;
