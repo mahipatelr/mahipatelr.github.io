@@ -81,7 +81,17 @@ a:hover {
   box-shadow: 0 6px 26px rgba(2,8,20,0.35);
 }
 
+/* FORCE toggle icon left + logo right on ALL screen sizes */
+.site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-direction: row-reverse;
+}
+
 .header-inner {
+  /* kept in case other rules reference it */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -244,7 +254,7 @@ a:hover {
   display: block;
 }
 
-/* Features */
+/* Features / Grid */
 
 .features {
   background: var(--bg-section);
@@ -561,6 +571,7 @@ a:hover {
   color: var(--text-white);
 }
 
+/* Ensure amounts column lines up: added width + no-wrap */
 .transactions-table td.amount {
   width: 150px;
   white-space: nowrap;
@@ -580,7 +591,7 @@ a:hover {
   color: #8ff2a6;
 }
 
-/* Cards */
+/* Learn page (cards) */
 
 .learn-hero {
   padding: 84px 0 20px;
@@ -672,7 +683,7 @@ a:hover {
   margin: 0 0 12px;
 }
 
-/* Check columns */
+/* Check columns & progress */
 
 .check-columns {
   display: flex;
@@ -779,16 +790,10 @@ a:hover {
 
 /* Support page */
 
-/* adjusted background to create a fuller blue bottom that blends with the page */
+/* Expanded bottom area so it blends into the section and doesn't look cut off */
 .support-hero {
   padding: 68px 0 140px;
-  background: linear-gradient(
-    180deg,
-    rgba(10,24,48,0.12) 0%,
-    rgba(11,39,72,0.40) 45%,
-    rgba(11,39,72,0.60) 70%,
-    var(--bg-section) 100%
-  );
+  background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
 }
 
 .support-wrapper {
@@ -968,6 +973,7 @@ a:hover {
 
 /* Chat CTA */
 
+/* moved up so it doesn't block the footer */
 .chat-cta {
   position: fixed;
   left: 50%;
@@ -1013,8 +1019,7 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  /* ensure hamburger is left and brand is right on small screens */
-  .site-header .header-inner {
+  .header-inner {
     flex-direction: row-reverse;
     align-items: center;
     gap: 8px;
