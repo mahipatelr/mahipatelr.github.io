@@ -244,7 +244,7 @@ a:hover {
   display: block;
 }
 
-/* Features / Grid */
+/* Features */
 
 .features {
   background: var(--bg-section);
@@ -561,6 +561,12 @@ a:hover {
   color: var(--text-white);
 }
 
+.transactions-table td.amount {
+  width: 150px;
+  white-space: nowrap;
+  text-align: right;
+}
+
 .amount {
   text-align: right;
   font-weight: 800;
@@ -574,7 +580,7 @@ a:hover {
   color: #8ff2a6;
 }
 
-/* Learn page (cards) */
+/* Cards */
 
 .learn-hero {
   padding: 84px 0 20px;
@@ -666,7 +672,7 @@ a:hover {
   margin: 0 0 12px;
 }
 
-/* Check columns & progress */
+/* Check columns */
 
 .check-columns {
   display: flex;
@@ -773,10 +779,16 @@ a:hover {
 
 /* Support page */
 
-/* <-- modified bottom padding per feedback (increase to extend blue area) */
+/* adjusted background to create a fuller blue bottom that blends with the page */
 .support-hero {
   padding: 68px 0 140px;
-  background: linear-gradient(180deg, rgba(10,24,48,0.12), rgba(6,18,38,0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(10,24,48,0.12) 0%,
+    rgba(11,39,72,0.40) 45%,
+    rgba(11,39,72,0.60) 70%,
+    var(--bg-section) 100%
+  );
 }
 
 .support-wrapper {
@@ -956,7 +968,6 @@ a:hover {
 
 /* Chat CTA */
 
-/* <-- modified bottom so button won't overlap footer */
 .chat-cta {
   position: fixed;
   left: 50%;
@@ -1002,8 +1013,8 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  /* <-- changed: make header a row-reverse so toggle/nav (hamburger) sits left and brand sits right */
-  .header-inner {
+  /* ensure hamburger is left and brand is right on small screens */
+  .site-header .header-inner {
     flex-direction: row-reverse;
     align-items: center;
     gap: 8px;
@@ -1090,7 +1101,7 @@ a:hover {
     width: 100%;
   }
 
-  /* <-- adjusted so chat button sits higher on smaller screens too */
+  /* For small screens */
   .chat-cta {
     bottom: 100px;
   }
@@ -1250,9 +1261,3 @@ a:hover {
     padding: 24px 0;
   }
 }
-
-
-
-
-
-
