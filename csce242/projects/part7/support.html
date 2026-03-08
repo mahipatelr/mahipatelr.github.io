@@ -48,7 +48,6 @@
         <h1 class="support-title">Support</h1>
         <p class="support-sub">How can we assist you?</p>
 
-        <!-- Search: inline override so it stretches to the same width as the contact/help area -->
         <div class="support-search" style="max-width:1100px; width:100%;">
           <input type="search" aria-label="Search FAQs" placeholder="Search FAQs" />
           <button aria-label="Search">Search</button>
@@ -124,24 +123,37 @@
           </a>
         </div>
 
-        <!-- Contact + video (replaces map): responsive iframe wrapper -->
-        <div style="display:flex; gap:24px; margin-top:26px; flex-wrap:wrap;">
-          <div style="flex:1; min-width:280px;">
-            <h3>Contact Us</h3>
-            <p>Please reach out with any questions.</p>
-            <p><strong>Phone:</strong> +1 (800) 123-4567</p>
-            <p><strong>Email:</strong> support@trustpay.com</p>
-          </div>
+        <!-- Contact Form -->
+        <div style="margin-top:40px; max-width:1100px;">
+          <h3>Contact Us</h3>
+          <p>Please reach out with any questions you may have.</p>
 
-          <div style="flex:1; min-width:320px;">
-            <h3>Financial Literacy — Video</h3>
-            <!-- ====== YouTube iframe (replace VIDEO_ID below if you want a different video) ====== -->
-            <div class="iframe-wrap">
-              <!-- using the tutorial ID you shared earlier; replace ZDbgazCCkD0 with any other YouTube video ID -->
-              <iframe src="https://www.youtube.com/embed/ZDbgazCCkD0" title="Financial Literacy video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <!-- ==================================================================================== -->
-            <p style="margin-top:8px; color:var(--text-muted); font-size:13px;">Video: basic financial concepts — replace iframe `src` with the video you prefer.</p>
+          <form id="contact-form" method="POST">
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required>
+            </p>
+            <p>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required>
+            </p>
+            <p>
+              <label for="message">Message</label>
+              <textarea name="message" id="message" required></textarea>
+            </p>
+            <p><button type="submit">Submit Form</button></p>
+            <div id="contact-result"></div>
+          </form>
+        </div>
+
+        
+        <div style="margin-top:40px; max-width:1100px;">
+          <h3>Learn About Financial Literacy</h3>
+          <div class="iframe-wrap">
+            <iframe src="https://www.youtube.com/embed/4j2emMn7UaI?si=EwOwJfT12Gm1u1RS"
+                    title="Financial Literacy Video"
+                    frameborder="0"
+                    allowfullscreen></iframe>
           </div>
         </div>
 
@@ -155,21 +167,8 @@
 
   <a class="chat-cta" href="#" role="button" aria-label="Chat with us">Chat with us!</a>
 
-  <script>
-    
-    (function(){
-      const hamburger = document.getElementById("hamburgerSupport");
-      const mobileMenu = document.getElementById("mobileMenuSupport");
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener("click", () => {
-          const isOpen = hamburger.classList.toggle("open");
-          mobileMenu.classList.toggle("open");
-          mobileMenu.setAttribute("aria-hidden", !isOpen);
-          hamburger.setAttribute("aria-expanded", isOpen);
-        });
-      }
-    })();
-  </script>
+  
+  <script src="js/script.js"></script>
 </body>
 </html>
 
