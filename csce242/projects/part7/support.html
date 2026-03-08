@@ -48,13 +48,13 @@
         <h1 class="support-title">Support</h1>
         <p class="support-sub">How can we assist you?</p>
 
-        <!-- Search: inline override so it stretches to the same width as the contact/help area -->
+        
         <div class="support-search" style="max-width:1100px; width:100%;">
           <input type="search" aria-label="Search FAQs" placeholder="Search FAQs" />
           <button aria-label="Search">Search</button>
         </div>
 
-        <!-- Contact/action cards -->
+        
         <div class="contact-row">
           <div class="contact-card" role="button" tabindex="0">
             <div class="contact-icon">☎</div>
@@ -81,7 +81,7 @@
           </a>
         </div>
 
-        <!-- Help articles list -->
+        
         <div class="help-list" aria-label="Help articles">
 
           <a class="help-item" href="article-getting-started.html">
@@ -124,6 +124,43 @@
           </a>
         </div>
 
+        
+        <div class="contact-and-map" style="display:flex; gap:20px; flex-wrap:wrap; margin-top:28px; max-width:1100px;">
+        
+          <section id="contact-us" style="flex:1 1 380px; min-width:300px;">
+            <h3>Contact Us</h3>
+            <p>Please reach out with any questions you may have.</p>
+
+            <form id="contact-form" method="POST">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" name="name" id="name" required>
+                </p>
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" required>
+                </p>
+                
+                <p>
+                    <label for="message">Message</label><br>
+                    <textarea name="message" id="message" required></textarea>
+                </p>
+                
+                <p><button type="submit">Submit Form</button></p>
+
+                <div id="contact-result" style="margin-top:8px;"></div>
+            </form>
+          </section>
+
+          
+          <section class="one" style="flex:1 1 300px; min-width:300px;">
+            <h3>Our Location</h3>
+            <p>123 Anywhere St.</p>
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.0021038412383!2d-81.03373772523273!3d33.992479720885186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad7ff85decd%3A0xeba1e7740d5c10e0!2sM.%20Bert%20Storey%20Engineering%20and%20Innovation%20Center!5e0!3m2!1sen!2sus!4v1772547121327!5m2!1sen!2sus" style="border:0; width:100%; height:300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </section>
+        </div>
+        
+
       </div>
     </section>
   </main>
@@ -149,6 +186,9 @@
       }
     })();
   </script>
+
+  
+  <script src="js/contact.js"></script>
 </body>
 </html>
 
