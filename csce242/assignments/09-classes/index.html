@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Classes - Songs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main id="content">
+  <h1>Classes</h1>
+  <h3>Music Time</h3>
+
+  <div id="dogs" class="columns"></div>
+</main>
+
+<footer id="main-footer">
+  @mahipatelr.com
+</footer>
+
+
+<div id="songModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+    <div class="modal-header">
+      <h3 id="modal-title"></h3>
+      <button id="modal-close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div id="modal-media" class="modal-video"></div>
+
+      <div class="song-popup-info">
+        <p><strong>By:</strong> <span id="modal-artist"></span></p>
+        <p><strong>Album:</strong> <span id="modal-album"></span></p>
+        <p><strong>Year:</strong> <span id="modal-year"></span></p>
+        <p><strong>Genre:</strong> <span id="modal-genre"></span></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/classes.js"></script>
+</body>
+</html>

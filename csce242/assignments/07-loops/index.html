@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assignment 7 — Loops</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="page-header">
+    <h1>Assignment 7 — Loops</h1>
+</header>
+
+<main class="tank-wrapper">
+
+    <div class="tank">
+        <div class="rim"></div>
+
+        <div class="water">
+            <div class="bubbles" id="bubbles"></div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="page-footer">
+    <a href="https://mahipatelr.com" target="_blank">
+        mahipatelr.com
+    </a>
+</footer>
+
+<script>
+const rand = (min, max) => Math.random() * (max - min) + min;
+
+const NUM_BUBBLES = 25;
+const container = document.getElementById("bubbles");
+
+for (let i = 0; i < NUM_BUBBLES; i++) {
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+
+    const size = rand(10, 25);
+    bubble.style.width = size + "px";
+    bubble.style.height = size + "px";
+
+    bubble.style.left = rand(5, 95) + "%";
+    bubble.style.bottom = "-20px";
+
+    const duration = rand(6, 12);
+    const delay = -rand(0, duration);
+
+    bubble.style.animation = "rise " + duration + "s linear " + delay + "s infinite";
+
+    container.appendChild(bubble);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

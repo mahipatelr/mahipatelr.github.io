@@ -1,0 +1,82 @@
+[
+  {
+    "_id": 1,
+    "merchant": "Dunkin",
+    "category": "Food",
+    "date": "2026-04-23",
+    "amount": -4.00,
+    "status": "Completed",
+    "img_name": "images/dunkin.png",
+    "note": "Coffee purchase"
+  },
+  {
+    "_id": 2,
+    "merchant": "Publix",
+    "category": "Shopping",
+    "date": "2026-04-22",
+    "amount": -38.20,
+    "status": "Completed",
+    "img_name": "images/grocery.png",
+    "note": "Weekly groceries"
+  },
+  {
+    "_id": 3,
+    "merchant": "Public Transit",
+    "category": "Transport",
+    "date": "2026-04-21",
+    "amount": -2.50,
+    "status": "Completed",
+    "img_name": "images/transit.png",
+    "note": "Bus fare"
+  },
+  {
+    "_id": 4,
+    "merchant": "Paycheck",
+    "category": "Income",
+    "date": "2026-04-19",
+    "amount": 500.00,
+    "status": "Completed",
+    "img_name": "images/paycheck.png",
+    "note": "Bi-weekly salary"
+  },
+  {
+    "_id": 5,
+    "merchant": "Shell Gas Station",
+    "category": "Transport",
+    "date": "2026-04-18",
+    "amount": -42.75,
+    "status": "Completed",
+    "img_name": "images/gas.png",
+    "note": "Fuel refill"
+  },
+  {
+    "_id": 6,
+    "merchant": "Uber Eats",
+    "category": "Food",
+    "date": "2026-04-17",
+    "amount": -12.32,
+    "status": "Completed",
+    "img_name": "images/delivery.png",
+    "note": "Dinner order"
+  },
+  {
+    "_id": 7,
+    "merchant": "Nike",
+    "category": "Shopping",
+    "date": "2026-04-16",
+    "amount": -89.99,
+    "status": "Completed",
+    "img_name": "images/online.png",
+    "note": "Clothing purchase"
+  },
+  {
+    "_id": 8,
+    "merchant": "Hulu",
+    "category": "Entertainment",
+    "date": "2026-04-15",
+    "amount": -14.99,
+    "status": "Completed",
+    "img_name": "images/streaming.png",
+    "note": "Monthly subscription"
+  }
+]

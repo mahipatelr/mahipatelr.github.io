@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #efe3d6;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.page-header {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* TANK WRAPPER */
+.tank-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* GLASS BOWL */
+.tank {
+    width: 700px;
+    height: 430px;
+    position: relative;
+    border-radius: 50% / 48%;
+    padding: 20px;
+
+    background: radial-gradient(
+        120% 90% at 50% 5%,
+        rgba(255,255,255,0.9) 0%,
+        rgba(255,255,255,0.6) 20%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.05) 80%
+    );
+
+    border: 8px solid rgba(255,255,255,0.35);
+
+    box-shadow:
+        0 40px 70px rgba(0,0,0,0.12),
+        inset 0 0 25px rgba(255,255,255,0.4);
+}
+
+/* RIM */
+.rim {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: -28px;
+    height: 50px;
+    border-radius: 50% / 55%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.9) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0.2) 100%
+    );
+
+    border: 6px solid rgba(255,255,255,0.4);
+}
+
+/* WATER */
+.water {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 10%;
+    bottom: 8%;
+    border-radius: 50% / 45%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #66b9ff, #0d84ff);
+}
+
+/* BUBBLE CONTAINER */
+.bubbles {
+    position: absolute;
+    inset: 0;
+}
+
+/* BUBBLE */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.9;
+}
+
+/* SIMPLE ANIMATION */
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+.page-footer {
+    margin: 40px 0;
+}
+
+.page-footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2b6fb6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

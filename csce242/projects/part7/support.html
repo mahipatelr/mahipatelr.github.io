@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrustPay — Support</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  
+  <style>
+    .support-contact-wrap {
+      margin-top: 40px;
+      max-width: 1100px;
+    }
+
+    .support-contact-wrap form .form-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .support-contact-wrap form .form-row label {
+      width: 140px;
+      min-width: 120px;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .support-contact-wrap form .form-row .field {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .support-contact-wrap input[type="text"],
+    .support-contact-wrap input[type="email"],
+    .support-contact-wrap textarea {
+      width: 100%;
+      max-width: 640px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      color: var(--text-white);
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    .support-contact-wrap textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    .support-contact-wrap form button[type="submit"] {
+      margin-top: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--blue-primary), var(--blue-bright));
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    
+    @media (max-width: 640px) {
+      .support-contact-wrap form .form-row {
+        display: block;
+      }
+      .support-contact-wrap form .form-row label {
+        display: block;
+        width: auto;
+        margin-bottom: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="brand">
+        <img src="../../images/logo.png" alt="TrustPay logo" class="logo">
+        <span class="brand-name">TrustPay</span>
+      </div>
+
+      <nav class="main-nav">
+        <button id="hamburgerSupport" class="hamburger" aria-expanded="false" aria-controls="mobileMenuSupport">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="mobileMenuSupport" class="mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item home">Support</a>
+        </div>
+
+        <div class="desktop-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="wallet.html" class="nav-item">Wallet</a>
+          <a href="transactions.html" class="nav-item">Transactions</a>
+          <a href="learn.html" class="nav-item">Learn</a>
+          <a href="support.html" class="nav-item home">Support</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="support-hero">
+      <div class="support-wrapper">
+
+        <h1 class="support-title">Support</h1>
+        <p class="support-sub">How can we assist you?</p>
+
+        <div class="support-search" style="max-width:1100px; width:100%;">
+          <input type="search" aria-label="Search FAQs" placeholder="Search FAQs" />
+          <button aria-label="Search">Search</button>
+        </div>
+
+        <!-- Contact/action cards -->
+        <div class="contact-row">
+          <div class="contact-card" role="button" tabindex="0">
+            <div class="contact-icon">☎</div>
+            <div class="contact-body">
+              <div class="contact-title">Call us anytime</div>
+              <p class="contact-sub">+1 (800) 123-4567</p>
+            </div>
+          </div>
+
+          <a href="mailto:support@trustpay.com" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">@</div>
+            <div class="contact-body">
+              <div class="contact-title">Send us an email</div>
+              <p class="contact-sub">support@trustpay.com</p>
+            </div>
+          </a>
+
+          <a href="#" class="contact-card" style="text-decoration:none;">
+            <div class="contact-icon">💬</div>
+            <div class="contact-body">
+              <div class="contact-title">Start live chat</div>
+              <p class="contact-sub">Chat with our support team</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Help articles list -->
+        <div class="help-list" aria-label="Help articles">
+
+          <a class="help-item" href="article-getting-started.html">
+            <div class="help-left">
+              <div class="help-icon">✓</div>
+              <div>
+                <div class="help-title">Getting Started with TrustPay</div>
+                <div class="help-subtext">How to begin using your demo wallet</div>
+              </div>
+            </div>
+
+            <div class="preview" aria-hidden="false">
+              <h4>Getting Started — Preview</h4>
+              <p>Quick tour: view your simulated balance, explore sample transactions, and try a first lesson in Wallet — all with sample data, no real money involved.</p>
+            </div>
+
+            <div class="help-arrow">›</div>
+          </a>
+
+          <a class="help-item" href="article-transaction-issue.html">
+            <div class="help-left">
+              <div class="help-icon">!</div>
+              <div>
+                <div class="help-title">How to Report a Transaction Issue</div>
+                <div class="help-subtext">Step-by-step guide to flag a simulated transaction</div>
+              </div>
+            </div>
+            <div class="help-arrow">›</div>
+          </a>
+
+          <a class="help-item" href="article-securing-account.html">
+            <div class="help-left">
+              <div class="help-icon">🔒</div>
+              <div>
+                <div class="help-title">Securing Your Account</div>
+                <div class="help-subtext">Best practices for demo accounts</div>
+              </div>
+            </div>
+            <div class="help-arrow">›</div>
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="support-contact-wrap">
+          <h3>Contact Us</h3>
+          <p>Please reach out with any questions you may have.</p>
+
+          <form id="contact-form" method="POST">
+            <div class="form-row">
+              <label for="name">Name:</label>
+              <div class="field"><input type="text" name="name" id="name" required></div>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <div class="field"><input type="email" name="email" id="email" required></div>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message</label>
+              <div class="field"><textarea name="message" id="message" required></textarea></div>
+            </div>
+
+            <div class="form-row">
+              <label></label>
+              <div class="field"><button type="submit">Submit Form</button></div>
+            </div>
+
+            <div id="contact-result" style="margin-top:8px;"></div>
+          </form>
+        </div>
+
+        
+        <div style="margin-top:40px; max-width:1100px;">
+          <h3>Learn About Financial Literacy</h3>
+          <div class="iframe-wrap">
+            <iframe src="https://www.youtube.com/embed/4j2emMn7UaI?si=EwOwJfT12Gm1u1RS"
+                    title="Financial Literacy Video"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 TrustPay — Demo
+  </footer>
+
+  <a class="chat-cta" href="#" role="button" aria-label="Chat with us">Chat with us!</a>
+
+  
+  <script src="js/script.js"></script>
+  
+  <script src="js/contact.js"></script>
+</body>
+</html>
+
+
+
+
